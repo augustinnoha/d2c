@@ -1,0 +1,85 @@
+
+<style>
+.md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+</style>
+
+
+<md-dialog aria-label="Operations à distance" style="width: 50%;">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Nouvelle notification</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <!-- <md-progress-linear md-mode="query" ng-disabled="sended"></md-progress-linear> -->
+    <md-dialog-content style="max-width:100%;max-height:810px; padding:15px;">
+
+
+    <form name="email" id="emailForm" novalidate>
+      <div class="form-group">
+        <label for="destinataires">Destinataire :</label>
+        <small>{{destinataire}}</small>
+        
+
+        <input style="margin-bottom:20px;" ng-show="listeAvaillable" type="text" id="filtre" name="filtre" ng-keyup="filterDestinataire($event)" ng-model="filtre" class="form-control" required>
+
+        <ul ng-show="newListe" style="list-style: none; padding-left: 0px; margin-left: 0px;">
+          <li ng-repeat="adresse in filtered track by $index">
+            <button style="margin-bottom: 5px;" class="btn btn-primary btn-small" ng-click="setDestinataire(adresse.email)">{{adresse.email}}</button> <br>
+          </li>
+        </ul>
+
+        <!-- Message d'erreur adresse -->
+        <div ng-messages="email.destinataires.$error" ng-if="email.destinataires.$touched">
+          <div ng-message="email" class="alert alert-success">La ou les adresses saisies ne sont pas valides</div>
+        </div>
+      </div>
+    </form>
+
+    </md-dialog-content">
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-if="!submitDisabled" class="md-raised warning" ng-click="notify()" >
+        Notifier
+      </md-button>
+      <md-button ng-click="cancel()" >
+        Annuler
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
+

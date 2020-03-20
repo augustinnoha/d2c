@@ -1,0 +1,99 @@
+<div id="recherche">
+  <div class="row">
+    <div class="col-sm-12" id="logoPrincipal">
+      <img src="images/logoDcc2.png" alt="Logo" class="img-responsive center-block">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div ng-class="{'col-xs-8' : !isClientNomPrenom, 'col-xs-6' : isClientNomPrenom}">
+            <input type="text" class="form-control" placeholder="Rechercher : N° compte, NOM Prénom Client, SIREN" ng-model="recherche" ng-keyup="checkInputType()" required>
+          </div>
+          <div id="danais" class="col-xs-2" ng-show="isClientNomPrenom">
+            <input type="text" class="form-control" placeholder="JJ/MM/AAAA" ng-model="dnaissance">
+          </div>
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block" type="button" ng-click="searchNcpt($event)" >
+              <span class="glyphicon glyphicon-search">
+              </span> Rechercher
+                <span class="typeRecherche" ng-if="isSiren">ce SIREN</span>
+                <span class="typeRecherche" ng-if="isCompte">ce numéro de compte</span>
+                <span class="typeRecherche" ng-if="isClientNomPrenom">ce client</span>
+              </span> 
+              </button>
+          </div>
+        </div>
+      </form>
+      <div ng-if="$scope.erreurRecherche.err" class="alert alert-danger">erreur</div>
+    </div>
+  </div>
+  <div id="resultatsClient" class="row" ng-if="clientsFound && isClientNomPrenom">
+    <div class="col-xs-6 col-sm-offset-3">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Civilité :</th>
+            <th>Nom :</th>
+            <th>Ville :</th>
+            <th>N° Compte : </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="client in clients">
+            <td>{{client.CIVILITE}}</td>
+            <td>{{client.NOM}}</td>
+            <td>{{client.VILLE}}</td>
+            <td><strong>{{client.COMPTE}}</strong></td>
+            <td><a ng-href="#!/synthese?ncpt={{client.COMPTE}}" class="btn btn-default btn-block"><span class="glyphicon glyphicon-arrow-right"></span> Selectionner ce compte</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Block recherche avancée -->
+  <!-- <div class="row" id="activationRechercheAvancée">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="radioOption">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+          <span class="mdl-switch__label">Recherche avancée :</span>
+          <input type="checkbox" id="switch-1" class="mdl-switch__input" ng-model="showRechercheAvancee" value="true">
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="showRechercheAvancee">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="radioOption">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="nomPrenom">
+          <input type="radio" id="nomPrenom" class="mdl-radio__button" name="options" ng-model="typeRecherche" value="nomPrenom">
+          <span class="mdl-radio__label">Nom Prénom</span>
+        </label>
+      </div>
+      <div class="radioOption">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="numeroCarte">
+          <input type="radio" id="numeroCarte" class="mdl-radio__button" name="options" ng-model="typeRecherche" value="carte">
+          <span class="mdl-radio__label">Numéro de carte</span>
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="radioOption">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="raisonSociale">
+          <input type="radio" id="raisonSociale" class="mdl-radio__button" name="options" ng-model="typeRecherche" value="rs">
+          <span class="mdl-radio__label">Raison Sociale / Enseign Commerciale</span>
+        </label>
+      </div>
+      <div class="radioOption">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="sirent">
+          <input type="radio" id="sirent" class="mdl-radio__button" name="options" ng-model="typeRecherche" value="siren">
+          <span class="mdl-radio__label">N° SIREN</span>
+        </label>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<!-- Toasts -->

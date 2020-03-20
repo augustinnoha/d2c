@@ -1,0 +1,97 @@
+
+<style>
+.md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+</style>
+
+
+<md-dialog aria-label="Operations à distance" style="width: 50%;"">
+    <md-toolbar>
+      <div class="md-toolbar-tools" style="background-color: #444 !important;">
+        <h2>Déclarer un incident, une anomalie</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:100%;max-height:810px; padding:15px;">
+    <div class="container-fluid">
+      <h4>
+        Votre aide nous est précieuse
+      </h4>
+      <p>
+        Nous cherchons constament à améliorer le D2C et vos retours nous sont inestimables.
+      </p>
+    </div>
+    <form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <label for="Utilisateur">Votre matricule : </label>
+            <input type="text" class="form-control" placeholder="{{feedback.userMatricule}}" ng-model="feedback.userMatricule" disabled>
+          </div>
+          <div class="col-md-9">
+            <label for="typeRetour">Votre retour concerne :</label>
+            <br>
+            <select class="form-control" name="typeRetout" id="typeRetout" ng-model="feedback.typeRetour" required>
+              <option value="dysfonctionnement">Un dysfonctionnement</option>
+              <option value="Erreur données">Des données erronées</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <br>
+            <label for="contenu">Votre retour</label>
+            <textarea name="requete" id="contenu" class="form-control" cols="30" rows="10" style="width: 100%;" ng-model="feedback.content"></textarea>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" value="contexteDutilisation" ng-model="feedback.contexte">
+    </form>
+
+    </md-dialog-content">
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-if="formValid" class="md-raised warning" ng-click="sendfeedback()" >
+        Envoyer
+      </md-button>
+      <md-button ng-click="cancel()" >
+        Annuler
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
+

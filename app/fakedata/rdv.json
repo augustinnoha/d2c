@@ -1,0 +1,211 @@
+[
+
+    [
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-19 00:00:00.000",
+
+            "heureDebut": "14.30",
+
+            "heureFin": "16.00",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "06",
+
+            "lib_theme_rdv": "CREDIT HABITAT",
+
+            "libCli": "TAUBY LUCILE                                                    ",
+
+            "idpart_calcule": "00000009848904 ",
+
+            "IDCLI_CALCULE": "00432895       ",
+
+            "CTPART": "PP",
+
+            "DDRNENT": "2017-09-05 00:00:00.000"
+
+        },
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-20 00:00:00.000",
+
+            "heureDebut": "9.30",
+
+            "heureFin": "11.30",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "04",
+
+            "lib_theme_rdv": "ASSURANCES BIENS ET PERSONNES",
+
+            "libCli": "ROUCHAUD JOSETTE                                                ",
+
+            "idpart_calcule": "00000000170502 ",
+
+            "IDCLI_CALCULE": "00028014       ",
+
+            "CTPART": "PP",
+
+            "DDRNENT": "2017-08-31 00:00:00.000"
+
+        },
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-20 00:00:00.000",
+
+            "heureDebut": "14.30",
+
+            "heureFin": "16.00",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "04",
+
+            "lib_theme_rdv": "ASSURANCES BIENS ET PERSONNES",
+
+            "libCli": "ROUCHAUD DAVID                                                  ",
+
+            "idpart_calcule": "00000000210583 ",
+
+            "IDCLI_CALCULE": "00337136       ",
+
+            "CTPART": "PP",
+
+            "DDRNENT": "2017-08-05 00:00:00.000"
+
+        },
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-24 00:00:00.000",
+
+            "heureDebut": "14.30",
+
+            "heureFin": "15.30",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "08",
+
+            "lib_theme_rdv": "BANQUE AU QUOTIDIEN",
+
+            "libCli": "CHABANNE JEAN-LOUIS                                             ",
+
+            "idpart_calcule": "00000000273908 ",
+
+            "IDCLI_CALCULE": "00040096       ",
+
+            "CTPART": "PP",
+
+            "DDRNENT": "2017-10-17 00:00:00.000"
+
+        },
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-24 00:00:00.000",
+
+            "heureDebut": "16.00",
+
+            "heureFin": "17.00",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "04",
+
+            "lib_theme_rdv": "ASSURANCES BIENS ET PERSONNES",
+
+            "libCli": "LUZINIER THIERRY                                                ",
+
+            "idpart_calcule": "00000000210473 ",
+
+            "IDCLI_CALCULE": "00072598       ",
+
+            "CTPART": "PP",
+
+            "DDRNENT": "2017-02-01 00:00:00.000"
+
+        },
+
+        {
+
+            "idAgent": "F082098  ",
+
+            "nomAgent": "LAVAL",
+
+            "prenomAgent": "CELINE",
+
+            "emailAgent": "Celine.LAVAL@ca-charente-perigord.fr",
+
+            "dateRdv": "2017-10-24 00:00:00.000",
+
+            "heureDebut": "17.00",
+
+            "heureFin": "18.00",
+
+            "idLieuRdv": "00250",
+
+            "cdThemeRdv": "09",
+
+            "lib_theme_rdv": "GESTION DES RISQUES",
+
+            "libCli": "DESMOND FRANCIS                                                 ",
+
+            "idpart_calcule": "00000000061588 ",
+
+            "IDCLI_CALCULE": "00010248       ",
+
+            "CTPART": "GP",
+
+            "DDRNENT": "2017-07-19 00:00:00.000"
+
+        }
+
+    ]
+
+]

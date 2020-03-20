@@ -1,0 +1,128 @@
+
+<style>
+  .md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+</style>
+
+
+<md-dialog aria-label="Operations à distance">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Quelles opérations peuvent être réalisées à distance ?</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <md-tabs md-dynamic-height md-border-bottom md-selected="index">
+        <md-tab label="Opérations autorisées">
+          <md-content class="md-padding">
+            <div class="container-fluid">
+              <!-- Opérations ligne 1 -->
+              <div class="row operations">
+                <div ng-repeat="operation in operations" class="col-sm-3" style="margin-bottom:10px;">
+                  <img ng-src="{{operation.url}}" ng-click="choixQuestions(operation.libel)" alt="" class="img-responsive">
+                  <center>
+                    <strong>{{operation.libel}}</strong>
+                  </center>
+                </div>
+              </div>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Questions de sécurité"  ng-disabled="'disabled'">
+          <md-content class="md-padding">
+            <p>
+              Pour déterminer si l'opération : "{{libel}}" peut être réalisée
+            </p>
+            <p>
+              <strong>Poser au moins 3 questions parmi la liste suivante</strong>
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Questions</th>
+                  <th>Réponses issues du SI</th>
+                  <th colspan="2">OK / KO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="q in questions track by $index">
+                  <td valign="middle">
+                    {{q.question}}
+                  </td>
+                  <td valign="middle">
+                    {{q.reponse}}  
+                  </td>
+                  <td>
+                    <md-button class="btn btn-success" ng-click="addConfirm($event)">Ok</md-button>
+                  </td>
+                  <td>
+                    <md-button class="btn btn-danger" ng-click="addConfirm($event)">KO</md-button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </md-content>
+        </md-tab>
+        <md-tab label="Confirmations" ng-disabled="'validate'">
+          <md-content class="md-padding">
+            <div layout="column" layout-align="center center" style="height: 500px">
+                <span class="glyphicon glyphicon-ok center-block" style="font-size: 5em; color:green;"></span>
+                <p>L'opération à distance peut être réalisée</p>
+                <md-button class="btn btn-success" ng-click="cancel()" >
+                  fermer
+                </md-button>
+              </div>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()" >
+        Annuler
+      </md-button>
+      <md-button ng-disabled="validate == true" style="margin-right:20px;" >
+        Valider
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

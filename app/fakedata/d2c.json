@@ -1,0 +1,657 @@
+
+
+[
+
+    [
+
+        {
+
+            "typ": "RAC",
+
+            "id": "26163",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_rac": "20160113",
+
+            "agent": "05139  ",
+
+            "nom_agent": "CASTANDET ADELINE               ",
+
+            "eds_agent": "AUP BERGERAC NAILLAC            ",
+
+            "lntcn": "FACE A FACE INTERNE INITIE AGENT    ",
+
+            "blocnote": "",
+
+            "date_ligne": 1452639600,
+
+            "Initiales": "CA",
+
+            "Telephone": "              ",
+
+            "Mail": "Adeline.CASTANDET@ca-charente-perigord.fr                                                           "
+
+        },
+
+        {
+
+            "typ": "RAC",
+
+            "id": "26164",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_rac": "20160127",
+
+            "agent": "05139  ",
+
+            "nom_agent": "CASTANDET ADELINE               ",
+
+            "eds_agent": "AUP BERGERAC NAILLAC            ",
+
+            "lntcn": "FACE A FACE INTERNE INITIE AGENT    ",
+
+            "blocnote": "",
+
+            "date_ligne": 1453849200,
+
+            "Initiales": "CA",
+
+            "Telephone": "              ",
+
+            "Mail": "Adeline.CASTANDET@ca-charente-perigord.fr                                                           "
+
+        },
+
+        {
+
+            "typ": "RAC",
+
+            "id": "409529",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_rac": "20161029",
+
+            "agent": "05340  ",
+
+            "nom_agent": "BOUVIER ALEXANDRINE             ",
+
+            "eds_agent": "AUP BERGERAC NAILLAC            ",
+
+            "lntcn": "FACE A FACE INTERNE INITIE AGENT    ",
+
+            "blocnote": "",
+
+            "date_ligne": 1477692000,
+
+            "Initiales": "BA",
+
+            "Telephone": "06.73.15.07.11",
+
+            "Mail": "Alexandrine.BOUVIER@ca-charente-perigord.fr                                                         "
+
+        },
+
+        {
+
+            "typ": "TEL",
+
+            "id": "587705",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_rac": "20170830",
+
+            "agent": "02167  ",
+
+            "nom_agent": "EL MADI AURORE                  ",
+
+            "eds_agent": "AGENCE ASSURANCES EN LIGNE      ",
+
+            "lntcn": "ENTRETIEN TELEPHONIQUE INITIE CLIENT",
+
+            "blocnote": "",
+
+            "date_ligne": 1504044000,
+
+            "Initiales": "EMA",
+
+            "Telephone": "              ",
+
+            "Mail": "Aurore.ELMADI@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "RAC",
+
+            "id": "394041",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_rac": "20161004",
+
+            "agent": "05340  ",
+
+            "nom_agent": "BOUVIER ALEXANDRINE             ",
+
+            "eds_agent": "AUP BERGERAC NAILLAC            ",
+
+            "lntcn": "FACE A FACE INTERNE INITIE AGENT    ",
+
+            "blocnote": "",
+
+            "date_ligne": 1475532000,
+
+            "Initiales": "BA",
+
+            "Telephone": "06.73.15.07.11",
+
+            "Mail": "Alexandrine.BOUVIER@ca-charente-perigord.fr                                                         "
+
+        }
+
+    ],
+
+    [
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1504130400,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Nouvelle ligne avec date plus proche",
+
+            "infos_utiles": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur volutpat nisl a auctor. Suspendisse facilisis vehicula dui nec fringilla. Donec aliquet, mauris at consequat rutrum.",
+
+            "conseil": "RAS",
+
+            "confidence": "RAS",
+
+            "type_eds": "",
+
+            "canal": "Téléphone",
+
+            "initiateur": "agent",
+
+            "id": "25",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1504130400,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "test avec type EDS",
+
+            "infos_utiles": "qsdqsd",
+
+            "conseil": "sqd",
+
+            "confidence": "qsd",
+
+            "type_eds": "",
+
+            "canal": "Téléphone",
+
+            "initiateur": "agent",
+
+            "id": "23",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1504130400,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "SDF",
+
+            "infos_utiles": "SDF",
+
+            "conseil": "SDF",
+
+            "confidence": "SDF",
+
+            "type_eds": "A",
+
+            "canal": "Téléphone",
+
+            "initiateur": "agent",
+
+            "id": "22",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1504130400,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Test avec TYPE eds",
+
+            "infos_utiles": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis aliquet felis, in mollis lectus interdum nec. Maecenas mattis eros lectus, ac luctus nibh porta at. Duis cursus felis elit, vitae laoreet est interdum a. Etiam consequat nisi sed auctor fermentum. Vivamus elementum tellus nec lectus consequat sagittis.",
+
+            "conseil": "",
+
+            "confidence": "",
+
+            "type_eds": "A",
+
+            "canal": "Agence",
+
+            "initiateur": "agent",
+
+            "id": "21",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Test d'un copier collé",
+
+            "infos_utiles": "Le coût standard de l’assurance « décès et perte totale et irréversible d’autonomie » facultative est de 9€/mois pour un assuré de moins de 60 ans couvert à 100 % et s’ajoute à l’échéance de remboursement du crédit (si vous l’avez souscrite). Le montant total dû par l’emprunteur au titre de l’assurance, sur la durée totale du prêt sera de : 756€ pour un Taux Annuel Effectif de l’Assurance (TAEA) de 1,127 %. Le coût de l’assurance peut varier en fonction de votre situation personnelle. Les conditions et évènements garantis sont indiqués au contrat. Offre valable jusqu’au 31/10/2017, réservée aux particuliers majeurs, sous réserve d’acceptation de votre dossier par votre Caisse régionale de Crédit Agricole, prêteur. Vous disposez d’un droit légal de rétractation.",
+
+            "conseil": "Ne pas trop copier / coller",
+
+            "confidence": "Il s agit d'un taux secret",
+
+            "type_eds": null,
+
+            "canal": "Mail",
+
+            "initiateur": "agent",
+
+            "id": "17",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Overture d un compte test",
+
+            "infos_utiles": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eros odio, hendrerit sit amet nisi in, ultrices scelerisque dui. Praesent lacinia nunc et massa posuere, in feugiat ex dapibus. Nam a metus risus. In tempus massa ac lectus ornare, sit amet ultricies quam rutrum. Sed porttitor mauris eget urna sodales, non placerat dolor venenatis. Nullam ullamcorper lectus nec orci porttitor, et ornare elit egestas. Donec suscipit ante sed leo varius, eu faucibus velit euismod. Morbi magna sapien, accumsan eget feugiat id, efficitur a sapien. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+
+            "conseil": "Pas de conseils donnés",
+
+            "confidence": "Pas de confidences",
+
+           "type_eds": null,
+
+            "canal": "Téléphone",
+
+            "initiateur": "agent",
+
+            "id": "13",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "qsdqsdqsd",
+
+            "infos_utiles": "qsdqsdqsdqsd",
+
+            "conseil": "qsdqsdqsdqsd",
+
+            "confidence": "qsdqsdqsdqsdqsd",
+
+            "type_eds": "C",
+
+            "canal": "Agence",
+
+            "initiateur": "agent",
+
+            "id": "12",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Lorem ipsum dolor",
+
+            "infos_utiles": "Lorem ipsum dolor sit amet",
+
+            "conseil": "Mon conseil au client",
+
+            "confidence": "Une confidence du client",
+
+            "type_eds": "C",
+
+            "canal": "Mail",
+
+            "initiateur": "",
+
+            "id": "11",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "Ceci est un contact tchat",
+
+            "infos_utiles": "TEST Infos Utiles",
+
+            "conseil": "Test Conseils Donnés",
+
+            "confidence": "Test - Confidence confidentielles de même pléonasme",
+
+            "type_eds": null,
+
+            "canal": "Visio",
+
+            "initiateur": "agent",
+
+            "id": "10",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "TEST - Objet",
+
+            "infos_utiles": "Test - Info utile",
+
+            "conseil": "Test conseil donné",
+
+            "confidence": "Test - Confidence",
+
+            "type_eds": "M",
+
+            "canal": "SMS",
+
+            "initiateur": "agent",
+
+            "id": "6",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "TEST - Objet",
+
+            "infos_utiles": "Test - Info utile",
+
+            "conseil": "Test conseil donné",
+
+            "confidence": "Test - Confidence",
+
+            "type_eds": "A",
+
+            "canal": "SMS",
+
+            "initiateur": "agent",
+
+            "id": "5",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503525600,
+
+            "agent": "05453",
+
+            "nom_agent": "Noha AUGUSTIN",
+
+            "eds_agent": "COOPERATION INTERNET            ",
+
+            "objet": "TEST - Objet",
+
+            "infos_utiles": "Test - Info utile",
+
+            "conseil": "Test conseil donné",
+
+            "confidence": "Test - Confidence",
+
+            "type_eds": "A",
+
+            "canal": "SMS",
+
+            "initiateur": "agent",
+
+            "id": "4",
+
+            "Initiales": "NA",
+
+            "Telephone": "05.53.24.40.29",
+
+            "Mail": "Noha.AUGUSTIN@ca-charente-perigord.fr                                                               "
+
+        },
+
+        {
+
+            "typ": "LIGNES",
+
+            "idcli_calcule": "00691795       ",
+
+            "date_ligne": 1503439200,
+
+            "agent": "80643",
+
+            "nom_agent": "Michel DOURIS",
+
+            "eds_agent": "DBI\\/PII-BER",
+
+            "objet": "Test objet",
+
+            "infos_utiles": "test infos utiles",
+
+            "conseil": "test conseil",
+
+            "confidence": "coucou",
+
+            "type_eds": null,
+
+            "canal": "Téléphone",
+
+            "initiateur": "Agent",
+
+            "id": "2",
+
+            "Initiales": "MD",
+
+            "Telephone": "05.53.24.41.02",
+
+            "Mail": "Michel.DOURIS@ca-charente-perigord.fr                                                               "
+
+        }
+
+    ]
+
+]

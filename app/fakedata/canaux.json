@@ -1,0 +1,89 @@
+
+
+[
+
+    [
+
+        {
+
+            "canal": "1",
+
+            "libelle": "Agence",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "2",
+
+            "libelle": "Téléphone",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "3",
+
+            "libelle": "Mail",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "4",
+
+            "libelle": "SMS",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "5",
+
+            "libelle": "Visio",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "6",
+
+            "libelle": "Tchat",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "7",
+
+            "libelle": "Extérieur",
+
+            "actif": "1"
+
+        },
+
+        {
+
+            "canal": "8",
+
+            "libelle": "Courrier",
+
+            "actif": "1"
+
+        }
+
+    ]
+
+]

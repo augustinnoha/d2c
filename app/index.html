@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil D2C</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/material-design-lite/material.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      /*_paq.push(['trackPageView']);*/
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//localhost/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Piwik Code -->
+  </head>
+  <body id="dcc" ng-app="d2cApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header" ng-controller="MainCtrl">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/" alt="D2C - Accueil">
+              <img src="images/logoSmall2.png" alt="D2C Accueil">
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Connexion" ng-href="http://cw00pmordm01.ca-technologies.fr/CRCPGDConnexion/connexion.php?criteres=TOUTES_LES_OR&user={{agent.matricule}}" target="blank" data-toggle="tooltip" data-placement="bottom" title="Connexion"><img src="images/outils/connexion.png" alt=""></a></li>
+              <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo FeedBack" ng-click="showFeedBack($event)">Besoin d'aide ?</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Sim CAC" href="//www.mobi-cacp.fr/simcac/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Simulateur CAC"><img src="images/outils/simuCac.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Sim Carte" href="//www.mobi-cacp.fr/simcb/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Simulateur Cartes"><img src="images/outils/simuCarte.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo E-roue" href="//www.e-roue.fr/#/numcr/3!Mo$" target="_blank" data-toggle="tooltip" data-placement="bottom" title="E-Roue"><img src="images/outils/eRoue.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Teo" href="//teo.adsi.credit-agricole.fr/?cr=824" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Téo"><img src="images/outils/teo.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Mobi" href="//www.mobi-cacp.fr" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Mobi"><img src="images/outils/mobi.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo MOF" href="//www.mobi-cacp.fr/offres/index.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Offre et Boosters"><img src="images/outils/mof.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Atourisk" href="//cep10-iucrprdapa.ca-technologies.fr:81/CRFC/risques/public/?p=index" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Atourisk"><img src="images/outils/atourisk.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Taux Credit" href="https://cnet.collab.ca-charente-perigord.credit-agricole.fr/sites/CNET/monmetier/Taux_Credits/Pages/Accueil.aspx" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Taux Crédits"><img src="images/outils/tauxCredit.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Taux Epargne" href="https://cnet.collab.ca-charente-perigord.credit-agricole.fr/sites/CNET/monmetier/TAUX-Epargne/Pages/Accueil.aspx" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Taux Epargne"><img src="images/outils/tauxEpargne.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Declaration DC" href="http://cep10-iucrprdapa.ca-technologies.fr:81/CRCE/declarationdeces/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Déclaration Décès"><img src="images/outils/declarationDeces.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="GoTo Site Vitrine" href="//www.ca-charente-perigord.fr/particuliers.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Accès Vitrine"><img src="images/outils/vitrine.png" alt=""></a></li>
+                <li><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Menu Haut" analytics-label="Show RDV" ng-if="rdvs" href="#" ng-click="showRDV($event)">Mes rendez-vous à venir : <span class="badge"  style="background-color:#01ACA4;">{{rdvs.length}}</span></a></li>
+                <!-- <li><a href="#" ng-click="showOutils($event)">Mes outils</a></li> -->
+                <!-- <li class="active"><a href="#">Vous avez des notifications : <span class="badge">9</span></a></li> -->
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+     <!-- Megamenu outils -->
+     <!-- <div id="megamenu_outils" class="megamenu closed">
+       <div class="container">
+         <div class="row">
+           <div class="col-sm-3">
+             <h3>
+               Mes outils
+             </h3>
+             <p>
+               <small>Mes outils du quotidien</small>
+             </p>
+           </div>
+           <div class="col-sm-1 col-xs-5" ng-repeat="outil in outils">
+             <a href="" alt="">
+               <img ng-src="{{outil.url}}.png" alt="logo {{n}}" class="img-responsive center-block">
+             </a>
+             <a style="display: block; margin-top: 10px;" href="">{{outil.nom}}</a>
+           </div>
+         </div>
+       </div>
+     </div> -->
+
+     <!-- Megamenus relatifs -->
+      <!-- Megamenu RDV -->
+     <div id="megamenu_rdv" class="megamenu closed">
+       <div class="container">
+         <div class="row">
+           <div class="col-sm-3">
+             <h3>
+               Mes Rendez-vous
+             </h3>
+           </div>
+           <div class="col-sm-9 col-xs-12">
+             <table class="table">
+               <tr>
+                 <td>Date</td>
+                 <td>Client</td>
+                 <td style="text-align: right">Actions</td>
+               </tr>
+               <tr ng-repeat="rdv in rdvs">
+                 <td>{{rdv.dateRdv | date : 'MMMM' }}</td>
+                 <td>{{rdv.libCli}}</td>
+                 <td style="text-align: right"><a analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="Fape" analytics-label="Telecharge FAPE" ng-href="{{rdv.fapeUrl}}" target="_blank" class="btn btn-danger btn-sm">Fiche de préparation</a></td>
+               </tr>
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+    <div id="application" class="container-fluid">
+    <div ng-view=""></div>
+    </div>
+
+    <div class="footer">
+      <div class="container-fluid">
+        <!-- <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
+      </div>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/angulartics-piwik/src/angulartics-piwik.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/synthese.js"></script>
+        <script src="scripts/controllers/dialog.js"></script>
+        <script src="scripts/controllers/sms.js"></script>
+        <script src="scripts/controllers/mail.js"></script>
+        <!-- <script src="scripts/services/getcompte.js"></script> -->
+        <script src="scripts/services/sms.js"></script>
+        <script src="scripts/services/makecall.js"></script>
+        <script src="scripts/filters/telfilter.js"></script>
+        <!-- <script src="scripts/services/dccfactory.js"></script> -->
+        <script src="scripts/controllers/notify.js"></script>
+        <script src="scripts/services/feedback.js"></script>
+        <script src="scripts/controllers/feedback.js"></script>
+        <script src="scripts/controllers/toto.js"></script>
+        <script src="scripts/controllers/prospects.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

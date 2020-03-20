@@ -1,0 +1,27 @@
+[
+
+    {
+
+        "Type": "CONSO",
+
+        "CRD": 0,
+
+        "Mensualite": 0,
+
+        "Retard": "N"
+
+    },
+
+    {
+
+        "Type": "HABITAT",
+
+        "CRD": 151250.63,
+
+        "Mensualite": 840.64,
+
+        "Retard": "N"
+
+    }
+
+]

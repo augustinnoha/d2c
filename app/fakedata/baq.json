@@ -1,0 +1,89 @@
+
+
+[
+
+    {
+
+        "LIB_JDEBIT": "Nombre jours débit",
+
+        "MT": "0"
+
+    },
+
+    {
+
+        "LIB_SMOYEN": "Solde moyen",
+
+        "MT": "727.92"
+
+    },
+
+    {
+
+        "LIB_FLUX": "Flux domiciliés",
+
+        "MT": "5119.66"
+
+    },
+
+    {
+
+        "FLUX_CONFIES": "Flux confiés",
+
+        "MT": "40652.32"
+
+    },
+
+    {
+
+        "CAC": "CAC",
+
+        "idpart_calcule": "00000010279754 ",
+
+        "compte": "00196789506",
+
+        "ioffre": "4100      ",
+
+        "loffre": "SOCLE COMPTE A COMPOSER PART.                                                                       "
+
+    },
+
+    {
+
+        "CAC": "CAC",
+
+        "idpart_calcule": "00000010279754 ",
+
+        "compte": "00196789506",
+
+        "ioffre": "4113      ",
+
+        "loffre": "MODULE COMPTE SECURISE PREMIUM                                                                      "
+
+    },
+
+    {
+
+        "CAC": "CAC",
+
+        "idpart_calcule": "00000010279754 ",
+
+        "compte": "00196789506",
+
+        "ioffre": "4115      ",
+
+        "loffre": "MODULE SUIVI @SSURE PREMIUM                                                                         "
+
+    },
+
+    {
+
+        "CARTE": "CARTE",
+
+        "idpart_calcule": "00000010279754 ",
+
+        "lib": "MCD DI DUAL SOCIETAIRE                                                                              "
+
+    }
+
+]

@@ -1,0 +1,74 @@
+
+<style>
+  .md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+</style>
+
+
+<md-dialog aria-label="Operations à distance">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Réclamations</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-progress-linear md-mode="query" ng-disabled="wait"></md-progress-linear>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+    </md-dialog-content>
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat="reclamation in reclamations">
+        <div class="md-list-item-text">
+          <small>
+            <strong>
+              {{reclamation.interv}} le {{reclamation.dttrait}} par {{reclamation.canal}} : {{reclamation.dom}} - {{reclamation.motif}}
+            </strong>
+          </small>
+          <p>{{reclamation.corps}}</p>
+          <hr>
+        </div>
+      </md-list-item>
+    </md-list>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()" >
+        Fermer
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

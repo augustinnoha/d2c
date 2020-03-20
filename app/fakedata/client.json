@@ -1,0 +1,641 @@
+[
+
+    {
+
+        "idcli_calcule": "00075848       ",
+
+        "idtcc": "1",
+
+        "lnclc": "M.OU MME POINAUD ANTHONY        ",
+
+        "idport": "2062",
+
+        "conseiller": "AJAC GUILLAUME",
+
+        "matricule": "F003307",
+
+        "idexelp": "01357",
+
+        "agence": "AUP SOYAUX                      ",
+
+        "idelst": "00331",
+
+        "agence_gest": "RUELLE                          ",
+
+        "idmarc": "01  ",
+
+        "cppros": "C",
+
+        "qualif_fid": "FI",
+
+        "Lib_fid": "",
+
+        "picto_mire": "-",
+
+        "date_dern_entr": "20171013",
+
+        "nb_RAC": "18",
+
+        "ff": "8",
+
+        "tel": "8",
+
+        "mail": "2",
+
+        "autres": "0",
+
+        "bloc_notes": "",
+
+        "bloc_notes_risk": "",
+
+        "pat_ndoss": "",
+
+        "pat_ouv": "        ",
+
+        "pat_clo": "        ",
+
+        "pat_ana": "                                ",
+
+        "pat_eds": "",
+
+        "atout_maj": "",
+
+        "atout_mat": "",
+
+        "atout_dia": "",
+
+        "atout_ana": "",
+
+        "top_ancien": "1",
+
+        "top_actif": "1",
+
+        "top_recouvrement": "0",
+
+        "non_conforme": "0",
+
+        "anrea_hab": "2016",
+
+        "anrea_con": "0000",
+
+        "ass_mrh": "MRH",
+
+        "ass_auto": "AUTO",
+
+        "un_contrat": "00185965006",
+
+        "flux_dom": "6352.62",
+
+        "prequalif": "R6",
+
+        "libpcsp": "CADRE AD/COMMER.ENT.                                                                                ",
+
+        "tel_Conseiller ": "06.72.75.80.50"
+
+    },
+
+    [
+
+        {
+
+            "aaaammjj": "20171022",
+
+            "idcli_calcule": "00075848       ",
+
+            "idpart_calcule": "00000009850350 ",
+
+            "ctpart": "PP",
+
+            "nompart": "POINAUD EMILIE                                                  ",
+
+            "libcivil": "MADAME              ",
+
+            "age": 37,
+
+            "danais": "19800322",
+
+            "fixe": "0981907176",
+
+            "port": "0631091273",
+
+            "email": "emiliedsilva@hotmail.com",
+
+            "acormail": "O",
+
+            "acorpor": "O",
+
+            "adresse1": "5 LOT L OREE DE BOIS BLANC",
+
+            "adresse2": "16600 MORNAC",
+
+            "connexions": "22",
+
+            "adresse_ms": "008240000000985035000000464936@ca-bamms-824.fr",
+
+            "date_MS": "20171018",
+
+            "e_releve": "1",
+
+            "origine_refus_ereleve": "",
+
+            "date_refus_ereleve": "        ",
+
+            "sea": "1",
+
+            "societaire": "1",
+
+            "libcona": "LOURDES                                           ",
+
+            "incapable": "0",
+
+            "cdcaju": "0",
+
+            "libcaju": "MAJEUR                        ",
+
+            "flnpai": "0",
+
+            "lnpatr": "DA SILVA                        ",
+
+            "modif_coor": null,
+
+            "SEGMENT_PART": "01-PART",
+
+            "siren": null,
+
+            "lnrsoc": null,
+
+            "ddval": "20031031",
+
+            "nb_ps": "10",
+
+            "mt_ps": "15.20",
+
+            "car_soc": "O",
+
+            "piece_id": "O",
+
+            "justif_dom": "O",
+
+            "budget": "07/06/2016",
+
+            "daaref": "01/01/2015",
+
+            "patrimoine": null,
+
+            "dateQCE": "04/10/2017",
+
+            "dtdeces": "04/10/2017",
+
+            "libsifa": "MARIE               ",
+
+            "librema": "COMMUNAUTE LEGALE                       ",
+
+            "mctope": "94658.16",
+
+            "nb_enf": "3",
+
+            "DUREE_RELATION": 13,
+
+            "MOTIF": [],
+
+            "NOTE_IRC": [],
+
+            "CLAUSE_BENEFICIAIRE": ""
+
+        },
+
+        {
+
+            "aaaammjj": "20171022",
+
+            "idcli_calcule": "00075848       ",
+
+            "idpart_calcule": "00000009850348 ",
+
+            "ctpart": "PP",
+
+            "nompart": "POINAUD ANTHONY                                                 ",
+
+            "libcivil": "MONSIEUR            ",
+
+            "age": 35,
+
+            "danais": "19820420",
+
+            "fixe": "0564524594",
+
+            "port": "0682654006",
+
+            "email": "emiliedsilva@hotmail.com",
+
+            "acormail": "O",
+
+            "acorpor": "O",
+
+            "adresse1": "5 LOT L OREE DE BOIS BLANC",
+
+            "adresse2": "16600 MORNAC",
+
+            "connexions": "0",
+
+            "adresse_ms": "",
+
+            "date_MS": "        ",
+
+            "e_releve": "0",
+
+            "origine_refus_ereleve": "",
+
+            "date_refus_ereleve": "        ",
+
+            "sea": "0",
+
+            "societaire": "1",
+
+            "libcona": "ANGOULEME                                         ",
+
+            "incapable": "0",
+
+            "cdcaju": "0",
+
+            "libcaju": "MAJEUR                        ",
+
+            "flnpai": "0",
+
+            "lnpatr": "POINAUD                         ",
+
+            "modif_coor": null,
+
+            "SEGMENT_PART": "01-PART",
+
+            "siren": null,
+
+            "lnrsoc": null,
+
+            "ddval": "20031031",
+
+            "nb_ps": "10",
+
+            "mt_ps": "15.20",
+
+            "car_soc": "O",
+
+            "piece_id": "O",
+
+            "justif_dom": "O",
+
+            "budget": "07/06/2016",
+
+            "daaref": "01/01/2015",
+
+            "patrimoine": null,
+
+            "dateQCE": "04/10/2017",
+
+            "dtdeces": null,
+
+            "libsifa": "MARIE               ",
+
+            "librema": "COMMUNAUTE LEGALE                       ",
+
+            "mctope": "94658.16",
+
+            "nb_enf": "3",
+
+            "DUREE_RELATION": 13,
+
+            "MOTIF": [],
+
+            "NOTE_IRC": [],
+
+            "CLAUSE_BENEFICIAIRE": ""
+
+        },
+
+        {
+
+            "aaaammjj": "20171022",
+
+            "idcli_calcule": "00075848       ",
+
+            "idpart_calcule": "00000010299300 ",
+
+            "ctpart": "PP",
+
+            "nompart": "POINAUD LILY ROSE                                               ",
+
+            "libcivil": "MADEMOISELLE        ",
+
+            "age": 10,
+
+            "danais": "20070920",
+
+            "fixe": "",
+
+            "port": "",
+
+            "email": "",
+
+            "acormail": " ",
+
+            "acorpor": " ",
+
+            "adresse1": "5 LOT L OREE DE BOIS BLANC",
+
+            "adresse2": "16600 MORNAC",
+
+            "connexions": "0",
+
+            "adresse_ms": "",
+
+            "date_MS": "        ",
+
+            "e_releve": "1",
+
+            "origine_refus_ereleve": "",
+
+            "date_refus_ereleve": "        ",
+
+            "sea": "0",
+
+            "societaire": "0",
+
+            "libcona": "L ISLE D ESPAGNAC                                 ",
+
+            "incapable": "0",
+
+            "cdcaju": "2",
+
+            "libcaju": "MIN/ADM.L.                    ",
+
+            "flnpai": "0",
+
+            "lnpatr": "POINAUD                         ",
+
+            "modif_coor": null,
+
+           "SEGMENT_PART": "01-PART",
+
+            "siren": null,
+
+            "lnrsoc": null,
+
+            "ddval": "20080503",
+
+            "nb_ps": null,
+
+            "mt_ps": null,
+
+            "car_soc": null,
+
+            "piece_id": "O",
+
+            "justif_dom": "O",
+
+            "budget": null,
+
+            "daaref": null,
+
+            "patrimoine": null,
+
+            "dateQCE": "01/10/2007",
+
+            "dtdeces": null,
+
+            "libsifa": "CELIBATAIRE         ",
+
+            "librema": null,
+
+            "mctope": "94658.16",
+
+            "nb_enf": null,
+
+            "DUREE_RELATION": 9,
+
+            "MOTIF": [],
+
+            "NOTE_IRC": [],
+
+            "CLAUSE_BENEFICIAIRE": ""
+
+        },
+
+        {
+
+            "aaaammjj": "20171022",
+
+            "idcli_calcule": "00075848       ",
+
+            "idpart_calcule": "00000010219316 ",
+
+            "ctpart": "PP",
+
+            "nompart": "POINAUD ESTEBAN                                                 ",
+
+            "libcivil": "MONSIEUR            ",
+
+            "age": 12,
+
+            "danais": "20051003",
+
+            "fixe": "",
+
+            "port": "0664246272",
+
+            "email": "",
+
+            "acormail": " ",
+
+            "acorpor": "N",
+
+            "adresse1": "5 LOT L OREE DE BOIS BLANC",
+
+            "adresse2": "16600 MORNAC",
+
+            "connexions": "0",
+
+            "adresse_ms": "",
+
+            "date_MS": "        ",
+
+            "e_releve": "1",
+
+            "origine_refus_ereleve": "",
+
+            "date_refus_ereleve": "        ",
+
+            "sea": "0",
+
+            "societaire": "0",
+
+            "libcona": "L ISLE D ESPAGNAC                                 ",
+
+            "incapable": "0",
+
+            "cdcaju": "2",
+
+            "libcaju": "MIN/ADM.L.                    ",
+
+            "flnpai": "0",
+
+            "lnpatr": "POINAUD                         ",
+
+            "modif_coor": null,
+
+            "SEGMENT_PART": "01-PART",
+
+            "siren": null,
+
+            "lnrsoc": null,
+
+            "ddval": "20051203",
+
+            "nb_ps": null,
+
+            "mt_ps": null,
+
+            "car_soc": null,
+
+            "piece_id": "O",
+
+            "justif_dom": "O",
+
+            "budget": null,
+
+            "daaref": null,
+
+            "patrimoine": null,
+
+            "dateQCE": "01/10/2007",
+
+            "dtdeces": null,
+
+            "libsifa": "CELIBATAIRE         ",
+
+            "librema": null,
+
+            "mctope": "94658.16",
+
+            "nb_enf": null,
+
+            "DUREE_RELATION": 11,
+
+            "MOTIF": [],
+
+            "NOTE_IRC": [],
+
+            "CLAUSE_BENEFICIAIRE": ""
+
+        },
+
+        {
+
+            "aaaammjj": "20171022",
+
+            "idcli_calcule": "00075848       ",
+
+            "idpart_calcule": "00000010359745 ",
+
+            "ctpart": "PP",
+
+            "nompart": "POINAUD SOAN                                                    ",
+
+            "libcivil": "MONSIEUR            ",
+
+            "age": 7,
+
+            "danais": "20100709",
+
+            "fixe": "",
+
+            "port": "",
+
+            "email": "",
+
+            "acormail": " ",
+
+            "acorpor": " ",
+
+            "adresse1": "5 LOT L OREE DE BOIS BLANC",
+
+            "adresse2": "16600 MORNAC",
+
+            "connexions": "0",
+
+            "adresse_ms": "",
+
+            "date_MS": "        ",
+
+            "e_releve": "1",
+
+            "origine_refus_ereleve": "",
+
+            "date_refus_ereleve": "        ",
+
+            "sea": "0",
+
+            "societaire": "0",
+
+            "libcona": "SOYAUX                                            ",
+
+            "incapable": "0",
+
+            "cdcaju": "2",
+
+            "libcaju": "MIN/ADM.L.                    ",
+
+            "flnpai": "0",
+
+            "lnpatr": "POINAUD                         ",
+
+            "modif_coor": null,
+
+            "SEGMENT_PART": "01-PART",
+
+            "siren": null,
+
+            "lnrsoc": null,
+
+            "ddval": "20100728",
+
+            "nb_ps": null,
+
+            "mt_ps": null,
+
+            "car_soc": null,
+
+            "piece_id": "O",
+
+            "justif_dom": "O",
+
+            "budget": null,
+
+            "daaref": null,
+
+            "patrimoine": null,
+
+            "dateQCE": "01/10/2007",
+
+            "dtdeces": null,
+
+            "libsifa": "CELIBATAIRE         ",
+
+            "librema": null,
+
+            "mctope": "94658.16",
+
+            "nb_enf": null,
+
+            "DUREE_RELATION": 7,
+
+            "MOTIF": [],
+
+            "NOTE_IRC": [],
+
+            "CLAUSE_BENEFICIAIRE": ""
+
+        }
+
+    ]
+
+]

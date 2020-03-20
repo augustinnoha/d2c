@@ -1,0 +1,101 @@
+[
+
+    [
+
+        {
+
+            "typ": "TEL",
+
+            "id": "490046",
+
+            "idcli_calcule": "00576980       ",
+
+            "date_rac": "20170318",
+
+            "agent": "03687  ",
+
+            "nom_agent": "OSTRIC FLORIAN                  ",
+
+            "eds_agent": "ANGOULEME CHAMP DE MARS         ",
+
+            "lntcn": "ENTRETIEN TELEPHONIQUE INITIE AGENT ",
+
+            "blocnote": "",
+            "agentCourt" : "OF"
+
+        },
+
+        {
+
+            "typ": "TEL",
+
+            "id": "504314",
+
+            "idcli_calcule": "00576980       ",
+
+            "date_rac": "20170408",
+
+            "agent": "03687  ",
+
+            "nom_agent": "OSTRIC FLORIAN                  ",
+
+            "eds_agent": "ANGOULEME CHAMP DE MARS         ",
+
+            "lntcn": "ENTRETIEN TELEPHONIQUE INITIE AGENT ",
+
+            "blocnote": "",
+            "agentCourt" : "OF"
+
+        },
+
+        {
+
+            "typ": "TEL",
+
+            "id": "481436",
+
+            "idcli_calcule": "00576980       ",
+
+            "date_rac": "20170306",
+
+            "agent": "05619  ",
+
+            "nom_agent": "SEDAN BERANGERE                 ",
+
+            "eds_agent": "CENTRE CONTACT MULTIMEDIA       ",
+
+            "lntcn": "ENTRETIEN TELEPHONIQUE INITIE AGENT ",
+
+            "blocnote": "",
+            "agentCourt" : "SB"
+
+        },
+
+        {
+
+            "typ": "RAC",
+
+            "id": "491022",
+
+            "idcli_calcule": "00576980       ",
+
+            "date_rac": "20170321",
+
+            "agent": "03687  ",
+
+            "nom_agent": "OSTRIC FLORIAN                  ",
+
+            "eds_agent": "AUP ANGOULEME CHAMP DE MARS     ",
+
+            "lntcn": "FACE A FACE INTERNE INITIE CLIENT   ",
+
+            "blocnote": "",
+            "agentCourt" : "OF"
+
+        }
+
+    ],
+
+    []
+
+]

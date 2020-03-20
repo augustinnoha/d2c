@@ -1,0 +1,373 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+html{
+  background-color: #393939;
+}
+
+// Styles globaux (toute l'application)
+#dcc{
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  padding-top: $navbar-height*1.3;
+  background-color: #393939;
+  font-family: 'Roboto', 'Helvetica', 'Arial', 'Sanserif';
+  overflow-y: scroll;
+
+  .clicable{
+    cursor: pointer;
+  }
+  /* 
+  .rose{background-color: #696969;} */
+  .rose{background-color: $brand-primary;}
+  .vert{background-color: $brand-success;}
+  .orange{background-color: #31C57C;}
+  .bleuca{background-color: #017C86;}
+  .warning{ color:#31C57C; }
+
+  //Gestion des couleurs selon EDS
+  .A{background-color: #00CC66; color: #fff !important;}
+  .C{background-color: #009999; color: #fff !important;}
+  .M{background-color: #FFC000; color: #fff !important;}
+
+
+  // Classes utilitaires
+  .disabled{
+    
+  }
+  .megamenu{
+      background-color: rgba(0,0,0,0.8);
+      z-index: 1000;
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: block;
+      top: $navbar-height;
+      padding: 25px 0px;
+      color: #fff;
+      max-height : 250px;
+      overflow-y: scroll;
+      transition: all 0.5s ease-out;
+    &.closed{
+      opacity: 0;
+      top: -300px;
+    }
+    a{
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .moreInfo{
+    margin: 4px 0px;
+    padding-top : 4px;
+    //border-top: 1px solid $brand-primary;
+    font-size: 12px;
+    font-style: italic;
+    color: $gray-light;
+  }
+}
+
+// Page recherche Home page
+#recherche{
+  position: absolute;
+  top: 25vh;
+  left: 0%;
+  right:0%;
+  color: $gray-lighter;
+  height: auto;
+
+  #logoPrincipal img{
+    margin-bottom: 50px;
+  }
+
+  #resultatsClient{
+    opacity: 1;
+    transition: all 0.3s;
+    &.ng-enter{
+      opacity: 0;
+      transform : translateY(-30px);
+    }
+  }
+  .typeRecherche{
+    opacity: 100;
+    display: inline-block;
+    transition: all 0.1s;
+    &.ng-enter{
+      transform : translate(0, -10);
+      opacity: 0;
+    }
+    &.ng-leave{
+      transform : translate(0, -10);
+      opacity: 0;
+    }
+  }
+
+  #activationRechercheAvancée{
+    margin-top: 20px;
+  }
+  .radioOption{
+    margin-bottom: 5px;
+    .label{
+      font-weight: normal;
+    }
+    .mdl-radio, .mdl-switch__label{
+      font-size: 11px;
+    }
+  }
+}
+
+// Page synthese ligne de temps
+#synthese{
+  // Override de material design
+  .md-menu-item > .md-button{
+    width: 240px !important;
+    place-content : center center;
+  }
+  .md-toolbar{
+    background-color: $brand-primary;
+  }
+  .menuAction{
+    width: 25px;
+    height: 20px;
+    text-align: left;
+    .md-button.md-icon-button{
+      padding:0px;
+      height: 25px;
+      width: 25px;
+      line-height: 0px;
+    }
+    i{
+      font-size: 17px;
+      padding: 0px;
+    }
+  }
+  .ctaBtn{
+    font-size: 17px !important;
+  }
+  .table-condensed .middle{
+    vertical-align: middle !important;
+  }
+  .clientNav{
+    padding: 0px;
+    margin-bottom:10px;
+    list-style-type: none;
+    font-size: 0.8em;
+    li.active a{
+      border-bottom: 1px solid #31C57C;
+      color: #31C57C;
+    }
+    a{
+      float: left;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: $gray-dark;
+    }
+  }
+  .card{
+    border-radius: 10px ;
+    margin-bottom: $grid-gutter-width/2;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    color: #292929;
+    .card-title{
+      position: relative;
+      border-radius: 5px 5px 0px 0px;
+      padding: $grid-gutter-width/3 $grid-gutter-width/2;
+      //background-color: $brand-primary;
+      color: #fff;
+      h1,h2,h3,h4,h5{
+        margin: 0px;
+        padding : 5px;
+      }
+    }
+    .card-toolbar{
+      padding-top:18px;
+      background-color: $gray-lighter;
+      padding: 0 $grid-gutter-width/2;
+    }
+    .card-saisie{
+      padding: $grid-gutter-width/3 $grid-gutter-width;
+      background-color: #FFF;
+    }
+    .card-body{
+      background-color: #FFF;
+      padding:  $grid-gutter-width/3 $grid-gutter-width/2;
+      p{
+        margin: 0px;
+      }
+      .coordItem{
+        margin-bottom: 5px;
+      }
+
+      #statutClt{
+        .glyphicon-remove-circle{
+          color: $brand-danger;
+        }
+        .glyphicon-ok-circle{
+          color: $brand-success;
+          &.warning{
+            color: $brand-warning;
+          }
+        }
+        td:nth-child(2), th:nth-child(2){
+          text-align: center;
+        }
+      }
+    }
+    .pastille{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      color: #fff;
+      margin: 10px auto;
+      box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+      background-color: $brand-primary;
+    }
+
+    .headerIcon{
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 7px;
+    }
+  }
+}
+
+// Page synthese ligne de temps
+#ligneTemps{
+  .card-body{
+    height: 720px;
+    overflow-y: scroll;
+  }
+  
+  .leftNotif{
+    position: relative;
+    width: 90px;
+    .agentPicture{
+      display: block;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+      color: #696969;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      padding:20px;
+      transition: background-color 0.5s;
+    }
+    .canal{
+      background-color: #fff;
+      border: 1px solid $gray-light;
+      border-radius: 50%;
+      height: 30px;
+      left: 0;
+      line-height: 29px;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      font-size: 11px;
+      top: 45px;
+      width: 30px;
+      z-index: 30;
+    }
+    .initiateur{
+      position: absolute;
+      top: 80px;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-right: auto;
+      margin-left : auto;
+      font-size: 14px;
+    }
+    .speedActionContainer{
+      width: 30px;
+      height: auto;
+    }
+    .speedAction{
+      font-size: 14px;
+      background-color: #fff;
+      box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+      width: 30px;
+      height: 30px;
+      line-height: 20px;
+      margin-top: 5px;
+      border-radius: 50%;
+      text-align: center;
+      padding:5px;
+    }
+  }
+  .objet{
+    font-weight: bolder;
+    display: inline;
+  }
+  .excerpt{
+    line-height:18px;
+  }
+  .init{
+    font-size: 0.9em;
+    color: #31C57C;
+  }
+  #sideNav{
+    max-width: 100% !important;
+  }
+  .fakeBTN{
+    display: block;
+    height: 35px;
+    line-height: 31px;
+    text-align: center;
+  }
+  #nouvelleSaisie{
+    h4{
+      border-bottom: 2px solid $brand-warning;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Page prospects
+
+.prospects{
+  #nextProspect{
+    padding-right: 20px;
+    a{
+      text-decoration: none;
+      transition: all 0.5s;
+      &:hover{
+        color: lighten(#01ACA4, 10%);
+      }
+    }
+  }
+  i.material-icons{
+    position: relative;
+    top: 5px;
+  }
+  h4{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(0, 71, 87);
+  }
+  .card_libel{
+    display: block !important;
+  }
+  .actions{
+    line-height:37px;
+  }
+  .qualif{
+    margin: 10px 0px;
+  }
+}
+
+// Module SMS
+#smsConfirm{
+  display: none;
+}

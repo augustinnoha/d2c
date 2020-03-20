@@ -1,0 +1,86 @@
+
+<style>
+  .md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+</style>
+
+
+<md-dialog aria-label="Operations à distance">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Envoi d'un SMS au : {{num}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-progress-linear md-mode="query" ng-disabled="sended"></md-progress-linear>
+    <md-dialog-content style="max-width:800px;max-height:810px; padding:15px;">
+
+
+    <form name="sms" id="smsForm" novalidate>
+      <div class="form-group">
+        <input type="text" name="objet" ng-model="objet" ng-minlength="10" class="form-control" placeholder="Objet :" required>
+        <!-- Message d'erreur objet -->
+        <div name="contenu" ng-messages="sms.objet.$error" ng-if="sms.objet.$touched">
+          <div ng-message="minlength" class="alert alert-success">L'objet doit faire au moins 10 charactères</div>
+        </div>
+      </div>
+      <textarea maxlength="146" name="content" id="smsContent" ng-model="smsContent" ng-change="countLeft(smsContent)" style="width: 100%;" rows="5" required></textarea>
+      <!-- Message d'erreur objet -->
+      <div ng-messages="sms.content.$error" ng-if="sms.content.$touched">
+        <div ng-message="required" class="alert alert-success">Un message de maximum 146 charactères doit être renseigné</div>
+      </div>
+      <small>Reste : {{countdown}}</small>
+    </form>
+
+
+    <div layout="column" id="smsConfirm" layout-align="center center" style="text-align: center;">
+        <span class="glyphicon glyphicon-ok center-block" style="font-size: 5em; color:green;"></span>
+        <p>L'opération à distance peut être réalisée</p>
+      </div>
+
+    </md-dialog-content">
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button type="submit" ng-if="!submitDisabled" ng-disabled="sms.$invalid" class="md-raised warning" ng-click="sendSMS()" >
+        Envoyer
+      </md-button>
+      <md-button ng-click="cancel()" >
+        {{secondActionText}}
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
+

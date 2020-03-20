@@ -1,0 +1,295 @@
+<div id="synthese" class="prospects">
+	<div class="row" layout id="syntheseBody">
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-title vert">
+							<div class="row">
+								<span id="nextProspect" class="pull-right">Prospect suivant : <a href="#">Jane DOE ►</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Carte prospect -->
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card">
+						<div class="card-title rose">
+							<h5>Mon Prospect</h5>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-xs-4">
+									<h4>
+										<i class="material-icons">account_circle</i> Identité
+									</h4>
+									<button ng-click="makeCall('0760111987')">Appeler</button>
+									<p><strong>Nom :</strong> DOE</p>
+									<p><strong>Prénom :</strong> JOHN</p>
+									<p><strong>Date de naissance :</strong> 05/07/1988</p>
+									<hr>
+									<p><strong>Adresse :</strong></p>
+									<p>
+										33 Rue Candillac - 24100 Bergerac
+									</p>
+									<hr>
+									<p><strong>Tél portable :</strong> 06 10 24 56 78</p>
+									<p><strong>Tél Fixe :</strong> 05 63 25 14 98</p>
+									<p><strong>Email :</strong> john.doe@mail.com</p>
+								</div>
+								<div class="col-xs-4">
+									<h4>
+										Source conquête
+									</h4>
+									<p><strong>Date enregistrement :</strong> 02/07/2017</p>
+									<p><strong>Medium :</strong> Jeu SOPRANO</p>
+									<p><strong>Nom Prescripteur :</strong> Jane DOE</p>
+									<hr>
+									<p><strong>Bloctel</strong></p>
+									<p>
+										Oui / non
+									</p>
+									<hr>
+									<h4>
+										Gestion
+									</h4>
+									<p><strong>AUP :</strong> ANGOULEME SAINT CYBARD</p>
+									<p><strong>PDV :</strong> GOND PONTOUVRE</p>
+									<p><strong>Assigné à :</strong> ARLIX Anne</p>
+								</div>
+								<div class="col-xs-4">
+									<h4>
+										Type : AGRI | PRO | PART | ASS
+									</h4>
+									<p><strong>Raison sociale :</strong> [FORME JURI] | XXXXXXXXX </p>
+									<p><strong>Dirigeant :</strong> Mr Jean MICHEL</p>
+									<p><strong>Né(e) le :</strong> 06/08/1967</p>
+									<hr>
+									<p><strong>Adresse Gérant | Président :</strong></p>
+									<p>
+										Résidant : 25 rue Camille - 24100 Bergerac
+									</p>
+									<hr>
+									<p><strong>SIREN :</strong> XXXXXXXXX</p>
+									<p><strong>Tél portable :</strong> 06 10 24 56 78</p>
+									<p><strong>Tél Fixe :</strong> 05 63 25 14 98</p>
+									<p><strong>Email :</strong> john.doe@mail.com</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Liste prospects -->
+			<div class="row" layout id="bottomRow">
+				<div class="col-sm-4">
+					<div class="card">
+						<div class="card-title vert">
+							<h5>Mes prospects</h5>
+						</div>
+						<div class="card-body" layout>
+							<div class="row">
+								<div class="col-xs-12">
+									<table class="table">
+										<thead>
+											<tr>
+												<td>Nom</td>
+												<td>Prénom</td>
+												<td>Date acquisition</td>
+												<td>Actions</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="n in [1,2,3,4,5]">
+												<td>DOE</td>
+												<td>Jane</td>
+												<td>02/05/2017</td>
+												<td>
+													<a href="#">Traiter</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ligne de temps -->
+		<div class="col-sm-4">
+			<div id="ligneTemps">
+				<div class="card">
+					<div class="card-title orange">
+						<h5>Dossier Conseil Client</h5>
+					</div>
+					<div class="card-toolbar">
+						<div layout="row" layout-align="space-between center">
+							<div flex>
+								<md-input-container style="margin-bottom:0px;" md-no-float>
+								  <input ng-model="dcc.search" type="text" placeholder="Recherche rapide ...">
+								</md-input-container>
+							</div>
+							<div flex layout="row" layout-align="end center">
+								<button analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="D2C" analytics-label="Tente_nouveau_dcc" ng-click="scrollToTop()" class="btn btn-warning" data-toggle="collapse" data-target="#nouvelleSaisie">
+									Nouveau contact <i class="material-icons" style="position: relative;top: 3px; font-size: 14px;">add</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="ldt" class="card-body" style="position: relative;">
+						<!-- Zone saisie nouveau contact -->
+						<div class="card-saisie collapse" id="nouvelleSaisie">
+							<md-progress-linear md-mode="query" class="md-warn" ng-if="enregistrement.saving"></md-progress-linear>
+							<div class="row">
+								<div class="col-xs-12">
+									<h4>
+										{{agent.PrenomNom}} - {{agent.EDSNom}}
+									</h4>
+								</div>
+							</div>
+							<form id="newDCC" name="newDCC">
+								<div class="row">
+									<div class="col-xs-3">
+										<button id="initagent" ng-class="{'btn btn-warning btn-block' : enregistrement.initiateur == 'agent', 'btn btn-default btn-block' : enregistrement.initiateur == 'client'}" ng-click="setSoliciteur('agent')">Contact initié Agent</button>
+									</div>
+									<div class="col-xs-3">
+										<button id="initclient" ng-class="{'btn btn-warning btn-block' : enregistrement.initiateur == 'client', 'btn btn-default btn-block' : enregistrement.initiateur == 'agent'}" ng-click="setSoliciteur('client')">Contact initié Client</button>
+									</div>
+									<div class="col-xs-1">
+										<span class="fakeBTN">via</span>
+									</div>
+									<div class="col-xs-5">
+										<div class="form-group form-inline">
+											<label for="canal">Canal :</label>
+											<!-- <select class="form-control" ng-options="item.canal as item.libelle for item in canauxCom track by item.id" ng-model="enregistrement.typ" required></select> -->
+											<select class="form-control" ng-model="enregistrement.typ" name="canal" id="canal" required>
+												<option ng-repeat="canal in canauxCom track by $index" value="{{canal.canal}}">{{canal.libelle}}</option>
+											</select>
+											<div class="alert alert-success" ng-messages="newDCC.enregistrement.typ.$error" ng-show="enregistrement.typ.$dirty" style="margin: 15px;">
+												<div ng-message="required">La sélection d'un canal est obligatoire. Veuillez le préciser.</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Objet -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group ">
+											<label for="objet">Objet :</label>
+											<br>
+											<input id="objet" name="objetDCC" type="text" ng-model="enregistrement.objet" style="width: 100%;" ng-minlenght="50" required>
+											<div class="alert alert-success" ng-messages="enregistrement.objet.$error" ng-show="enregistrement.objet.$dirty" style="margin: 15px;">
+												<div ng-message="required">L'objet est obligatoire pour finaliser votre saisie</div>
+												<div ng-message="minlenght">L'objet doit faire au minimum 50 charactères</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Infos pratiques -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="infosPratiques">Infos Utiles :</label> <br>
+											<textarea required name="info_utile" id="info_utile" ng-model="enregistrement.info_utile" rows="10" style="width: 100%;"></textarea>
+											<div class="alert alert-success" ng-messages="enregistrement.info_utile.$error" ng-show="enregistrement.info_utile.$dirty" style="margin: 15px;">
+												<div ng-message="required">Une saisie de l'information utile est obligatoire</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Conseils donnés pratiques -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="conseilsDonnes">Conseils Donnés :</label> <br>
+											<textarea  name="conseil" id="conseil"  ng-model="enregistrement.conseil" style="width: 100%;"></textarea>
+											<!-- <div class="alert alert-success" ng-messages="enregistrement.conseil.$error" ng-show="enregistrement.conseil.$dirty" style="margin: 15px;">
+												<div ng-message="required">Une saisie des l'information utile est obligatoire</div>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<!-- Données confidentielles -->
+								<div class="row">
+									<div class="col-xs-12 bg-warning">
+										<div class="form-group">
+											<label for="donneesConfidentielles">Données Confidentielles:</label> <br>
+											<small>A ne pas divulguer au client.</small>
+											<textarea name="donneesConfidentielles" id="donneesConfidentielles" rows="2" ng-model="enregistrement.confidence" style="width: 100%;"></textarea>
+										</div>
+									</div>
+								</div>
+								<!-- CTA Enregistrer -->
+								<div class="row" style="padding-top:10px;">
+
+									<div class="col-xs-3">
+										<button ng-click="resetForm()" ng-hide="enregistrementOk" data-toggle="collapse" data-target="#nouvelleSaisie" class="btn btn-default btn-block">Annuler</button>
+										
+									</div>
+									<div class="col-xs-3">
+										<button class="btn btn-warning btn-block" ng-click="newDCC.$valid && saveEntry($event)">
+										Enregistrer
+										</button>
+									<div class="col-sm-3">
+										<button ng-click="resetForm()" ng-show="enregistrementOk" data-toggle="collapse" data-target="#nouvelleSaisie" class="btn btn-default btn-block">Fermer</button>
+									</div>
+									</div>
+								</div>
+								<hr>
+							</form>
+						</div>
+						<!-- <div  layout="column"> -->
+						<div  layout="column" ng-repeat="ev in lignesDT | orderBy:'-date_ligne' | filter:dcc.search | filter:{type_eds: dcc.filtreEds}">
+							<div layout="row">
+								<div class="leftNotif" layout="column" layout-align="center center">
+
+									<span class="agentPicture clicable {{ev.type_eds}}" data-toggle="collapse" data-target="#speedActions-{{$index}}">{{ev.Initiales}}</span>
+									<div id="speedActions-{{$index}}" class="collapse speedActionContainer" layout="column" layout-align="center center">
+										<a href="#"><i ng-click="callInterne('0'+ev.Telephone | TelFilter, $event)" class="material-icons speedAction text-success">phone</i></a>
+										<a href="#"><i ng-click="mail(ev.Mail, $event)" class="material-icons speedAction text-warning">mail</i></a>
+									</div>
+								</div>
+								<div layout="column" flex="80">
+									<span style="position: absolute; right:25px; color: grey; cursor:pointer;" ng-click="notify(ev)">
+										<i class="material-icons">call_missed_outgoing</i>
+									</span>
+									<span class="objet"><small style="color: #696969;">{{ (ev.date_ligne*1000) | date:'d/MM/yyyy' }}</small> | {{ev.lntcn || ev.objet}}</span>
+
+									<!-- cas si type rac -->
+									<span class="init" ng-if="ev.typ !== 'LIGNES' ">{{ev.nom_agent}} - {{ev.eds_agent}} a sollicité {{compte.nompart}} par <strong>{{ev.typ}}</strong></span>
+									<!-- cas si type ldt -->
+									<span class="init" ng-if="ev.typ == 'LIGNES' ">{{ev.nom_agent}} - {{ev.eds_agent}} a sollicité {{compte.nompart}} par <strong>{{ev.canal}}</strong></span>
+									<p class="excerpt" style="border-top: 1px solid #E7E7E7; border-left: 1px solid #E7E7E7; border-right: 1px solid #E7E7E7; padding: 15px; margin-top: 15px; border-radius: 15px 15px 0px 0px">
+										{{ev.infos_utiles}}
+									</p>
+									<p class="excerpt" style="font-size: 11px; border-left: 1px solid #E7E7E7; border-right: 1px solid #E7E7E7; padding:15px;">
+										<strong>Conseil(s) donné(s) :</strong> {{ev.conseil}}
+									</p>
+									<p class="excerpt" style="font-size: 11px; background-color: #E7E7E7; padding: 15px; border-radius: 0px 0px 15px 15px;">
+										<strong>Information(s) confidentielle(s) :</strong> {{ev.confidence}}
+									</p>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(function(){
+		var documentHeight = $('#syntheseBody').height();
+		var bottomRow = $("#bottomRow").height();
+		var delta = documentHeight - bottomRow;
+		//$("#bottomRow .card .card-body").height(delta - 35*2);
+		/*console.log(documentHeight);
+		console.log($("#bottomRow .card .card-body").height(500));*/
+	});
+</script>

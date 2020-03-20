@@ -1,0 +1,89 @@
+
+<style>
+.md-toolbar-tools{
+    background-color: #01ACA4;
+  }
+  .operations{
+    margin-bottom: 25px;
+  }
+  .ng-enter {
+    transition:0.2s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .ng-enter.ng-enter-active {
+    opacity:1;
+  }
+
+  .ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+  }
+  .ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  th:nth-child(3){
+    text-align: center;
+  }
+  tr{
+    vertical-align: middle;
+  }
+  md-content{
+    min-width: 650px;
+  }
+  #mailDialog{
+    top: -13% !important;
+  }
+</style>
+
+
+<md-dialog id="mailDialog" aria-label="Operations à distance" style="width: 50%; top:-13%;">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Nouvel email : {{destinataire}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()" aria-label="Annuler">
+          <span class="glyphicon glyphicon-remove"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-progress-linear md-mode="query" ng-disabled="sended"></md-progress-linear>
+    <md-dialog-content style="max-width:100%;max-height:810px; padding:15px;">
+
+
+    <form name="email" id="emailForm" novalidate>
+      <div class="form-group">
+        <label for="destinataires">Destinataire(s) :</label>
+        <input type="email" id="destinataires" name="destinataires" ng-model="destinataires" class="form-control" ng-value="'{{destinataire}}'" placeholder="{{destinataire}}" required>
+        <!-- Message d'erreur adresse -->
+        <div ng-messages="email.destinataires.$error" ng-if="email.destinataires.$touched">
+          <div ng-message="email" class="alert alert-success">La ou les adresses saisies ne sont pas valides</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="objet">Objet :</label>
+        <input type="text" name="objet" class="form-control" ng-model="objet" ng-minlenght="50" required>
+        <!-- Message d'erreur objet -->
+        <div ng-messages="email.objet.$error" ng-if="email.objet.$touched">
+          <div ng-message="minlenght" class="alert alert-success">L'objet doit faire au minimum 50 charatères</div>
+          <div ng-message="required" class="alert alert-success">L'objet est requis</div>
+        </div>
+      </div>
+      <textarea name="content" id="mailContent" ng-model="mailContent" style="width: 100%;" rows="15"></textarea>
+    </form>
+
+    </md-dialog-content">
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-if="!submitDisabled" class="md-raised warning" ng-click="sendMail()" >
+        Envoyer
+      </md-button>
+      <md-button ng-click="cancel()" >
+        {{secondActionText}}
+      </md-button>
+    </md-dialog-actions>
+</md-dialog>
+

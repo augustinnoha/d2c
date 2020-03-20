@@ -1,0 +1,123 @@
+[
+
+    {
+
+        "idpart_calcule": "00000050117348 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MONSIEUR LAMBERT NATHAN",
+
+        "COMPTE": "80006377460",
+
+        "MSOLD1": "30.00",
+
+        "TYPCPT": "1",
+
+        "IDCDPR": "00371",
+
+        "lnprod": " LIVRET A                         "
+
+    },
+
+    {
+
+        "idpart_calcule": "00000050114612 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MONSIEUR LAMBERT SAMUEL",
+
+        "COMPTE": "80006376383",
+
+        "MSOLD1": "1815.97",
+
+        "TYPCPT": "1",
+
+        "IDCDPR": "00001",
+
+        "lnprod": " COMPTE CHEQUE                    "
+
+    },
+
+    {
+
+        "idpart_calcule": "00000050114612 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MONSIEUR LAMBERT SAMUEL",
+
+        "COMPTE": "80006103239",
+
+        "MSOLD1": "1965.94",
+
+        "TYPCPT": "2",
+
+        "IDCDPR": "00001",
+
+        "lnprod": " COMPTE CHEQUE                    "
+
+    },
+
+    {
+
+        "idpart_calcule": "00000050114612 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MONSIEUR LAMBERT SAMUEL",
+
+        "COMPTE": "80006820232",
+
+        "MSOLD1": "2231.55",
+
+        "TYPCPT": "1",
+
+        "IDCDPR": "00011",
+
+        "lnprod": " CARRE MAUVE ( PEL )              "
+
+    },
+
+    {
+
+        "idpart_calcule": "00000050114612 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MONSIEUR LAMBERT SAMUEL",
+
+        "COMPTE": "80006376677 000007743240",
+
+        "MSOLD1": "45.60",
+
+        "TYPCPT": "2",
+
+        "IDCDPR": "00026",
+
+        "lnprod": " COMPTE TITRE ORDINAIRE           "
+
+    },
+
+    {
+
+        "idpart_calcule": "00000010394321 ",
+
+        "idcli_calcule": "00576980       ",
+
+        "NOMPART": "MADEMOISELLE JACOB GAELLE",
+
+        "COMPTE": "54941496205",
+
+        "MSOLD1": "472.69",
+
+        "TYPCPT": "1",
+
+        "IDCDPR": "00001",
+
+        "lnprod": " COMPTE CHEQUE                    "
+
+    }
+
+]

@@ -1,0 +1,826 @@
+<div id="synthese">
+	<div class="row">
+		<!-- Mon Client -->
+		<div class="col-sm-7">
+			<div class="row">
+				<!-- block coordonnées / canaux  -->
+				<div class="col-md-4">
+					<!-- Card Mon client -->
+					<div class="card">
+						<div class="card-title vert">
+							<h5>Mon client</h5>
+						</div>
+						<div class="card-body">
+							<ul class="clientNav">
+								<li ng-repeat="partenaire in partenaires track by $index" ng-click="setCurrentPartenaire($index, $event)" ><a href="#" ng-class="{'bg-success' : index == $index}">{{partenaire.nompart}}</a></li>
+							</ul>
+							<table class="table table-condensed middle">
+								<!-- N° compte Client -->
+								<tr>
+									<td colspan="4">
+										Géré par :
+										<strong>
+											{{compte.conseiller || 'Non définie'}} - {{compte.agence_gest}}
+										</strong>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4" ng-if="partenaires[index].DUREE_RELATION == 1">En relation depuis : {{partenaires[index].DUREE_RELATION}} an</td>
+									<td colspan="4" ng-if="partenaires[index].DUREE_RELATION > 1">En relation depuis : {{partenaires[index].DUREE_RELATION}} ans</td>
+								</tr>
+								<tr ng-if="partenaires[index].dtdeces !== null">
+									<td colspan="4" style="border:none; background-color: #F88585; padding:5px 10px; color:#fff">Attention : partenaire décédé le {{partenaires[index].dtdeces}}</td>
+								</tr>
+								<tr>
+									<td class="menuAction">
+										<md-button class="md-icon-button">
+											<i class="material-icons">account_balance</i>
+										</md-button>
+									</td>
+									<td>
+										{{ncompte}}
+									</td>
+									<td class="menuAction">
+										<md-button class="md-icon-button">
+											<i class="material-icons">cake</i>
+										</md-button>
+									</td>
+									<td>
+										{{partenaires[index].age}} ans
+									</td>
+								</tr>
+								<!-- Adresse Client -->
+								<tr>
+									<td class="menuAction">
+										<md-button class="md-icon-button">
+											<i class="material-icons">home</i>
+										</md-button>
+									</td>
+									<td colspan="3" ng-if="partenaires[index].adresse1">
+										{{partenaires[index].adresse1}} - {{partenaires[index].adresse2}}
+									</td>
+									<td colspan="3" ng-if="!partenaires[index].adresse1" style="color:red;">
+										<i class="material-icons" style="font-size: 18px; position:relative; top:2px;">warning</i> Adresse non renseignée
+									</td>
+								</tr>
+								<!-- Tel fixe Client -->
+								<tr>
+									<td class="menuAction">
+										<md-menu md-offset="55 -4" style="width: 150px;" ng-if="partenaires[index].fixe">
+										 <!-- Trigger element is a md-button with an icon -->
+										 <md-button ng-click="$mdMenu.open($event)" class="md-icon-button" aria-label="Composer">
+											<i class="material-icons">phone</i>
+										 </md-button>
+										 <md-menu-content style="padding:0px;">
+										   <md-menu-item><md-button ng-click="call(partenaires[index].fixe, $event)" class="md-raised md-primary">Composer <i class="material-icons ctaBtn">phone</i></md-button></md-menu-item>
+										 </md-menu-content>
+										</md-menu>
+									</td>
+									<td ng-if="partenaires[index].fixe">
+										<a href="tel:#" ng-click="call(partenaires[index].fixe, $event)">{{partenaires[index].fixe}}</a>
+									</td>
+									<td ng-if="!partenaires[index].fixe" style="color:red;">
+										<i class="material-icons" style="font-size: 18px; position:relative; top:2px;">warning</i> Tél fixe non renseigné
+									</td>
+									<td class="menuAction">
+										<md-menu md-offset="55 -4" style="width: 150px;" ng-if="partenaires[index].port">
+										 <!-- Trigger element is a md-button with an icon -->
+										 <md-button ng-click="$mdMenu.open($event)" class="md-icon-button" aria-label="Composer">
+											<i class="material-icons" ng-class="{'text-muted' : partenaires[index].acorpor === ' ','text-danger' : partenaires[index].acorpor === 'N'}">phone_iphone</i>
+										 </md-button>
+										 <md-menu-content style="padding:0px;">
+										   <md-menu-item><md-button ng-click="call(partenaires[index].port, $event)" class="md-raised md-primary">Composer <i class="material-icons ctaBtn">phone</i></md-button></md-menu-item>
+										   <md-menu-item><md-button ng-click="sms(partenaires[index].port, $event)" class="md-raised md-primary">SMS <i class="material-icons ctaBtn">message</i></md-button></md-menu-item>
+										 </md-menu-content>
+										</md-menu>
+									</td>
+									<td ng-if="partenaires[index].port">
+										<a href="#" ng-class="{'text-muted' : partenaires[index].acorpor === ' ','text-danger' : partenaires[index].acorpor === 'N'}" ng-click="call(partenaires[index].port, $event)">{{partenaires[index].port}}</a>
+									</td>
+									<td ng-if="!partenaires[index].port" style="color: red;">
+										<i class="material-icons" style="font-size: 18px; position:relative; top:2px;">warning</i> Tél portable non renseigné
+									</td>
+								</tr>
+								<!-- Mail Client -->
+								<tr>
+									<td class="menuAction">
+										<md-menu md-offset="55 -4" style="width: 150px;"  ng-if="partenaires[index].email">
+										 <!-- Trigger element is a md-button with an icon -->
+										 <md-button ng-click="$mdMenu.open($event)" class="md-icon-button" aria-label="Composer">
+											<i class="material-icons" ng-class="{'text-muted' : partenaires[index].acorpor === ' ','text-danger' : partenaires[index].acorpor === 'N'}">email</i>
+										 </md-button>
+										 <md-menu-content style="padding:0px;">
+										   <md-menu-item>
+										   	<md-button ng-click="mail(partenaires[index].email, $event)" class="md-raised md-primary">Mail <i class="material-icons ctaBtn">email</i></md-button>
+										   	<md-button ng-click="mail(partenaires[index].adresse_ms, $event)" class="md-raised md-primary">BAM <i class="material-icons ctaBtn">email</i></md-button>
+										   	</md-menu-item>
+										 </md-menu-content>
+										</md-menu>
+									</td>
+									<td colspan="3" ng-if="partenaires[index].email">
+										<a href="#" ng-class="{'text-muted' : partenaires[index].acorpor === ' ','text-danger' : partenaires[index].acorpor === 'N'}" ng-click="mail(partenaires[index].email, $event)">{{partenaires[index].email}}</a>
+									</td>
+									<td colspan="3" ng-if="!partenaires[index].email" style="color: red;">
+										<i class="material-icons" style="font-size: 18px; position:relative; top:2px;">warning</i> Email non renseigné
+									</td>
+								</tr>
+								<!-- Situation Client -->
+								<tr>
+									<td class="menuAction">
+										 <md-button data-toggle="collapse" data-target="#situation" class="md-icon-button" aria-label="Composer">
+											<i class="material-icons clicable">face</i>
+										 </md-button>
+									</td>
+									<td colspan="3">
+										<span class="clicable" data-toggle="collapse" data-target="#situation">Situation Client</span>
+										<div id="situation" class="collapse moreInfo">
+											Mon client est <strong class="text-success">{{partenaires[index].libsifa || 'situation familiale indéterminée'}}</strong> et
+											<!-- cas si a des enfants -->
+											<strong ng-if="partenaires[index].nb_enf !== null">a {{ partenaires[index].nb_enf }} enfant(s)</strong>
+											<!-- cas si n'a pas d'enfants -->
+											<strong ng-if="partenaires[index].nb_enf === null">n'a pas d'enfant</strong>. 
+											Il est
+											<!-- cas si locataire 'pas d'annee de rea hab -->
+											<strong ng-if="compte.anrea_hab == ''" class="text-success">locataire</strong>
+											<!-- cas si proprietaire 'annee de rea hab existante -->
+											<strong ng-if="compte.anrea_hab !== ''" class="text-success">propriétaire</strong>
+											et enregistré sous la profession <strong class="text-success">"{{compte.libpcsp || 'profession indéfinie'}}"</strong>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<h5 class="title">
+								Les essentiels
+							</h5>
+							<table class="table table-condensed" id="statutClt">
+									<tr>
+										<td>Est sociétaire</td>
+										<td>
+											<!-- Si oui -->
+											<span ng-if="partenaires[index].societaire == '1'" class="glyphicon glyphicon-ok-circle warning"></span>
+											<!-- Si non -->
+											<span ng-if="partenaires[index].societaire == '0' " class="glyphicon glyphicon-remove-circle"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>Est BAMiste</td>
+										<td>
+											<!-- Si oui -->
+											<span ng-if="partenaires[index].connexions !== '0'" class="glyphicon glyphicon-ok-circle warning"></span>
+											<!-- Si non -->
+											<span ng-if="partenaires[index].connexions == '0' " class="glyphicon glyphicon-remove-circle"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>Est 100% E-Relevé</td>
+										<td>
+											<!-- Si Oui -->
+											<span ng-if="partenaires[index].e_releve == '1'" class="glyphicon glyphicon-ok-circle warning" data-toggle="tooltip" data-placement="right" title="Souscription 100% en ligne effectuée"></span>
+											<!-- Si Non -->
+											<span ng-if="partenaires[index].e_releve == '0'" class="glyphicon glyphicon-remove-circle"></span>
+										</td>
+									</tr>
+									<tr>
+										<td>Note IRC :</td>
+										<td>
+											{{partenaires[index].NOTE_IRC[0].BO1_Note || 'N/R'}}
+										</td>
+									</tr>
+									<tr>
+										<td>Fidélité :</td>
+										<td>
+											<!-- Si Oui -->
+											<span ng-if="compte.qualif_fid == 'FI'"  data-toggle="collapse"  data-target="#fidelite" class="clicable warning"> Est fidèle</span>
+											<!-- Si Non -->
+											<span ng-if="compte.qualif_fid == 'NF'"  data-toggle="collapse" data-target="#fidelite" class="clicable text-danger"> Non fidèle</span>
+											<!-- Si QUASI -->
+											<span ng-if="compte.qualif_fid == 'QF'"  data-toggle="collapse"  data-target="#fidelite" class="clicable text-success"> Est quasi-fidèle</span>
+										</td>
+									</tr>
+							</table>
+							<!-- <div id="fidelite" class="collapse">
+								<table class="table table-condensed">
+									<tr>
+										<td color="red" >Majeur capable</td>
+										<td  color="red" align="center">Oui</td>
+									</tr>
+									<tr>
+										<td color="red" >Durée de relation</td>
+										<td  color="red" align="center"> à 3 ans</td>
+									</tr>
+									<tr>
+										<td color="red" >Est sociétaire</td>
+										<td  color="red" align="center">Oui</td>
+									</tr>
+									<tr>
+										<td color="red" >Banque principale</td>
+										<td  color="red" align="center">Oui</td>
+									</tr>
+									<tr>
+										<td color="red" >Détention</td>
+										<td  color="red" align="center">3/4</td>
+									</tr>
+								</table>
+							</div> -->
+						</div>
+					</div>
+					
+					<!-- Conformité -->
+					<div class="card bg-success">
+						<div class="card-title vert">
+							<h5>Conformité Client</h5>
+						</div>
+						<div class="card-body">
+							<!-- Outils utilisés par le client -->
+							<table class="table table-condensed" id="statutClt">
+								<tr>
+									<td style="border-top:none;">Pièce d'identité</td>
+									<td style="border-top:none;">
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].piece_id == 'O'" class="glyphicon glyphicon-ok-circle warning"></span>
+										<!-- Si Non -->
+										<span ng-if="partenaires[index].piece_id == 'N'" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Justificatif de domicile</td>
+									<td>
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].justif_dom == 'O'" class="glyphicon glyphicon-ok-circle warning"></span>
+										<!-- Si Non -->
+										<span ng-if="partenaires[index].justif_dom == 'N'" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>CSP</td>
+									<td>
+										<span ng-if="compte.libpcsp" class="glyphicon glyphicon-ok-circle warning">
+										<span ng-if="!compte.libpcsp" class="glyphicon glyphicon-remove-circle danger">
+									</td>
+								</tr>
+								<tr>
+									<td>Budget</td>
+									<td>
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].budget" class="glyphicon glyphicon-ok-circle warning"> | {{ partenaires[index].budget | date:'MM/yy'}}</span>
+										<!-- Si Non -->
+										<span ng-if="partenaires[index].budget == 'null'" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Fiscalité</td>
+									<td>
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].daaref" class="glyphicon glyphicon-ok-circle warning"> | {{partenaires[index].daaref}}</span>
+										<!-- Si Non -->
+										<span ng-if="!partenaires[index].daaref" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Etat patrimoine</td>
+									<td>
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].patrimoine" class="glyphicon glyphicon-ok-circle warning"> | {{partenaires[index].patrimoine}}</span>
+										<!-- Si Non -->
+										<span ng-if="partenaires[index].patrimoine == 'null'" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Conformité MIF</td>
+									<td>
+										<!-- Si Oui -->
+										<span ng-if="partenaires[index].dateQCE" class="glyphicon glyphicon-ok-circle warning"> | {{ partenaires[index].dateQCE }}</span>
+										<!-- Si Non -->
+										<span ng-if="partenaires[index].dateQCE == 'null'" class="glyphicon glyphicon-remove-circle text-danger"></span>
+									</td>
+								</tr>
+								<tr>
+									<td>Clause bénéficiaire AV</td>
+									<td><span class="glyphicon glyphicon-ok-circle warning"></span> {{compte.CLAUSE_BENEFICIAIRE || Standard}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- block coordonnées / canaux  -->
+				<div class="col-md-4">
+				<!-- Evenements commerciaux Connexion -->
+				<div ng-if="partenaires[index].MOTIF && partenaires[index].MOTIF.length > 0"  class="card">
+						<div class="card-title bleuca" style="border-radius:10px; background-color: #BC1047;">
+							<div class="row">
+								<div class="col-xs-10">
+									<h5 style="margin-bottom: 5px;">Evèments Commerciaux</h5>
+									<ul ng-repeat="event in partenaires[index].MOTIF track by $index" style="margin: 0px;padding: 0px 0px 0px 14px;">
+										<li><small style="text-transform: lowercase;"><span style="position: relative;top: -1px;border: 1px solid #fff;background: none;border-radius: 5px;" class="badge" style="">{{event.NbEtoiles}} <i class="material-icons" style="font-size:10px;">star_rate</i></span> {{event.LibEvt}}</small></li>
+									</ul>
+								</div>
+								<div class="col-xs-2" style="text-align: right;">
+									<i class="material-icons">warning</i>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="card-body">
+							Canaux Client
+							<canvas id="doughnut1" class="chart chart-doughnut"
+							  chart-data="canaux.chiffres" chart-labels="canaux.libels" chart-options="canaux.options"
+							  style="height: 100px; width: auto;">
+							</canvas> 
+						</div> -->
+					</div>
+					<!-- Card Canaux -->
+					<div class="card">
+						<div class="card-title bleuca">
+							<h5>Canaux de communication préférés du Client</h5>
+						</div>
+						<div class="card-body">
+							<!-- Canaux Client -->
+							<canvas id="doughnut1" class="chart chart-doughnut"
+							  chart-data="canaux.chiffres" chart-labels="canaux.libels" chart-options="canaux.options"
+							  style="height: 100px; width: auto;">
+							</canvas> 
+						</div>
+					</div>
+					<div class="row">
+						<!-- Card Opérations AD -->
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-title bleuca">
+									<h5>Opérations à distance</h5>
+								</div>
+								<div class="card-body">
+									<button class="pastille center-block" ng-click="showValidationDialog($event)">
+										<i style="display:block; top:50px;" class="material-icons">add_circle</i>
+									</button>
+									<center>
+										<small>
+											 <strong>Nouvelle validation</strong>
+										</small>
+									</center>
+								</div>
+							</div>	
+						</div>
+						<!-- Card Opérations AD -->
+						<div class="col-sm-6">
+							<div class="card">
+								<div class="card-title bleuca" >
+									<h5>Réclamations / Demandes</h5>
+								</div>
+								<div class="card-body">
+									<button class="pastille center-block"  ng-disabled="nbReclamations == 0" class="noRecla" ng-click="showReclamationDialog($event)">
+										<strong ng-if="nbReclamations > 0">
+											{{nbReclamations}}
+										</strong>
+										<strong ng-if="nbReclamations == 0">
+											0
+										</strong>
+									</button>
+									<center>
+										<small>
+											<strong>Réclamations</strong>
+										</small>
+									</center>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<!-- Card Mon client -->
+					<div class="card">
+						<div class="card-title bleuca">
+							<h5>Bloc Note Client</h5>
+						</div>
+						<div ng-if="partenaires[index].dtdeces !== null" style="border:none; background-color: #F88585; padding:5px 10px; color:#fff">
+							Attention : partenaire décédé le {{partenaires[index].dtdeces}}
+						</div>
+						<div class="card-body">
+							<table class="table table-condensed" id="statutClt">
+								<tr>
+									<td  style="border-top:none;">
+										<strong ng-if="compte.bloc_notes !== ''" class="clicable" data-toggle="collapse" data-target="#riskCommercial">
+											Commercial
+											 <span class="badge pull-right" style="background-color:#01ACA4;">1</span>
+										</strong>
+										<strong ng-if="compte.bloc_notes == ''">
+											Commercial
+											<span class="badge pull-right" style="background-color:#01ACA4;">0</span>
+										</strong>
+									</td>
+								</tr>
+								<tr id="riskCommercial" class="collapse">
+									<td>
+										{{compte.bloc_notes}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong ng-if="compte.bloc_notes_risk !== ''" class="clicable" data-toggle="collapse" data-target="#riskRisque">
+											Risque
+											 <span class="badge pull-right" style="background-color:#01ACA4;">1</span>
+										</strong>
+										<strong ng-if="compte.bloc_notes_risk == ''">
+											Risque
+											<span class="badge pull-right" style="background-color:#01ACA4;">0</span>
+										</strong>
+									</td>
+								</tr>
+								<tr id="riskRisque" class="collapse">
+									<td>
+										{{compte.bloc_notes_risk}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong ng-if="compte.atout_dia !== ''" class="clicable" data-toggle="collapse" data-target="#riskAtourisk">
+											Atourisk
+											 <span class="badge pull-right" style="background-color:#01ACA4;">1</span>
+										</strong>
+										<strong ng-if="compte.atout_dia == ''">
+											Atourisk
+											<span class="badge pull-right" style="background-color:#01ACA4;">0</span>
+										</strong>
+									</td>
+								</tr>
+								<tr id="riskAtourisk" class="collapse">
+									<td>
+										{{compte.atout_dia}}
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong ng-if="compte.pat_ndoss !== ''" class="clicable" data-toggle="collapse" data-target="#riskRecouvrement">
+											Recouvrement
+											 <span class="badge pull-right" style="background-color:#01ACA4;">1</span>
+										</strong>
+										<strong ng-if="compte.pat_ndoss == ''">
+											Recouvrement
+											<span class="badge pull-right" style="background-color:#01ACA4;">0</span>
+										</strong>
+									</td>
+								</tr>
+								<tr id="riskRecouvrement" class="collapse">
+									<td>
+										<table style="width: 100%";>
+											<tr>
+												<td align="left"><strong>Dossier</strong></td>
+												<td align="center"><strong>Ouv.</strong></td>
+												<td align="center"><strong>Clo.</strong></td>
+												<td align="center"><strong>Suivi</strong></td>
+												<td align="center"><strong>Type</strong></td>
+											</tr>
+											<tr>
+												<td align="left">{{compte.pat_ndoss || 'N/R'}}</td>
+												<td align="center">{{compte.pat_ouv || 'N/R'}}</td>
+												<td align="center">{{compte.pat_clo || 'N/R'}}</td>
+												<td align="center">{{compte.pat_ana || 'N/R'}}</td>
+												<td align="center">{{compte.pat_eds || 'N/R'}}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- Card Prelevements -->
+					<div class="card">
+						<div class="card-title bleuca">
+							<h5>Prélèvements</h5>
+							<i class="material-icons headerIcon">call_made</i> 
+						</div>
+						<div class="card-body">
+							<!-- Adresse Client -->
+							<table ng-if="prelevements[0].length >= 1" class="table table-condensed">
+								<tr ng-repeat="p in prelevements[0] | limitTo : 6 | orderBy : p.montant">
+									<td>{{p.lib}}</td>
+									<td style="text-align: right;"><strong>{{p.montant | number }} €</strong></td>
+								</tr>
+							</table>
+							<table ng-if="prelevements[0].length == 0" class="table table-condensed">
+								<tr>
+									<td colspan="2">Pas de prélèvements</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- block BAQ / Epargne / Credit / Assurance  -->
+				<div class="col-md-4">
+					<!-- Card BAQ -->
+					<div class="card ">
+						<div class="card-title rose">
+							<h5>BAQ</h5>
+							<i class="material-icons headerIcon">home</i> 
+						</div>
+						<div class="card-body">
+							<!-- Adresse Client -->
+							<table class="table table-condensed">
+								<tr>									
+									<td>Nombre jours débit : <strong>{{baq[0].MT || 'non défini'}}</strong></td>
+									<td align="right">
+										<span ng-if="cac"><strong>CAC :</strong> oui</span>
+									</td>
+								</tr>
+								<tr>
+								</tr>
+								<tr ng-repeat="OC in OCs">
+									<td><strong>OC sur compte : {{OC.compte}}</strong></td>
+									<td align="right">{{OC.montant}} €</td>
+								</tr>
+								<tr ng-repeat="carte in cartes">
+									<td><strong>Carte :</strong></td>
+									<td align="right"><span width="100%">{{carte.lib || "Pas de carte"}}</span></td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Solde moyen DAV :</strong> 
+									</td>
+									<td align="right">
+										<md-progress-circular ng-if="WaittingBaq"  md-mode="indeterminate" class="md-accent" md-diameter="10px"></md-progress-circular> 
+										<span ng-if="!WaittingBaq">{{baq[1].MT | number:2 }} € </span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Flux domiciliés (30j) : </strong>
+									</td>
+									<td align="right">
+										<md-progress-circular ng-if="WaittingBaq" md-mode="indeterminate" class="md-accent" md-diameter="10px"></md-progress-circular>
+										<span ng-if="!WaittingBaq">{{baq[2].MT | number:2 }} € </span>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<strong>Flux confiés (12 mois) : </strong>
+									</td>
+									<td align="right">
+										<md-progress-circular ng-if="WaittingBaq" md-mode="indeterminate" class="md-accent" md-diameter="10px"></md-progress-circular> 
+										<span ng-if="!WaittingBaq">{{baq[3].MT | number:2 || "-"}}€</span>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- Card Epargne -->
+					<div class="card">
+						<div class="card-title rose">
+							<h5>Epargne | {{sommeEpargne | number:0 }} €</h5>
+							<i class="material-icons headerIcon">attach_money</i> 
+						</div>
+						<div class="card-body">
+							<!-- Epargne Client -->
+							<canvas ng-if="epargne.graphReady" id="doughnut" class="chart chart-doughnut"
+							  chart-data="epargne.chiffres" chart-labels="epargne.libels" chart-options="epargne.options" chart-colors="epargne.colors"
+							  style="height: 100px; width: auto;">
+							</canvas> 
+						</div>
+					</div>
+					<!-- Card Crédit -->
+					<div class="card">
+						<div class="card-title rose">
+							<h5>Crédit | {{sumCredit | number:2 }}€</h5>
+							<i class="material-icons headerIcon">filter_none</i> 
+						</div>
+						<div class="card-body">
+							<!-- Adresse Client -->
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Type</th>
+										<th style="text-align: right">CRD</th>
+										<th style="text-align: right">Mensu</th>
+										<th style="text-align: right">Retard</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="credit in credits">
+										<td>{{credit.Type}}</td>
+										<td style="text-align: right"><strong>{{credit.CRD | number }} €</strong></td>
+										<td style="text-align: right"><strong>{{credit.Mensualite | number }} €</strong></td>
+										<td style="text-align: right">{{credit.Retard}}</td>
+									</tr>
+									<tr>
+										<td>
+											Pré-qualifications : 
+										</td>
+										<td colspan="3" align="right">
+											<strong>
+												{{compte.prequalif || 'Non pré-qualifié'}}
+											</strong>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- Card Assurance -->
+					<div class="card">
+						<div class="card-title rose">
+							<h5>Assurances</h5>
+							<i class="material-icons headerIcon">beach_access</i> 
+						</div>
+						<div class="card-body">
+							<table class="table">
+								<tr>
+									<td style="border-top:none;">Auto : <strong>{{ assurances[0].Nombre }}</strong></td>
+									<td style="border-top:none;">Habitation : <strong>{{ assurances[1].Nombre }}</strong></td>
+								</tr>
+								<tr>
+									<td>Protection juridique : <strong>{{ assurances[2].Nombre }}</strong></td>
+									<td>GAV : <strong>{{ assurances[4].Nombre }}</strong></td>
+								</tr>
+								<tr>
+									<td>Santé : <strong>{{ assurances[3].Nombre }}</strong></td>
+									<td>Garantie décès : <strong>{{ assurances[5].Nombre }}</strong></td>
+								</tr>
+								<tr>
+									<td>Garantie obsèques : <strong>{{ assurances[6].Nombre }}</strong></td>
+									<td>Vers autonomie : <strong>{{ assurances[7].Nombre }}</strong></td>
+								</tr>
+							</table> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ligne de temps -->
+		<div class="col-sm-5">
+			<div id="ligneTemps">
+				<div class="card">
+					<div class="card-title orange">
+						<h5>Dossier Conseil Client</h5>
+					</div>
+					<div class="card-toolbar">
+						<div layout="row" layout-align="space-between center">
+							<div flex="30">
+								<md-input-container style="margin-bottom:0px;" md-no-float>
+								  <input ng-model="dcc.search" type="text" placeholder="Recherche rapide ...">
+								</md-input-container>
+							</div>
+							<div flex="50">
+								<md-radio-group ng-model="dcc.filtreEds" layout="row">
+
+								  <md-radio-button   value="A" name="agence" aria-label="Filtre contacts entrants">
+								    Agence
+								  </md-radio-button>
+								  <md-radio-button   value="C" name="ccm" aria-label="Filtre contacts sortants">
+								    CCM / CAL
+								  </md-radio-button>
+								  <md-radio-button   value="M" name="middle" aria-label="Filtre contacts sortants">
+								    Middle
+								  </md-radio-button>
+								  <md-radio-button   value="" name="Tous" aria-label="Filtre contacts sortants" ng-if="dcc.filtreEds">
+								    Tous
+								  </md-radio-button>
+								</md-radio-group>
+							</div>
+							<div flex layout="row" layout-align="end center">
+								<button analytics-on="click" analytics-event="{{agent.matricule}}" analytics-category="D2C" analytics-label="Tente_nouveau_dcc" ng-click="scrollToTop()" class="btn btn-warning" data-toggle="collapse" data-target="#nouvelleSaisie">
+									Nouveau contact <i class="material-icons" style="position: relative;top: 3px; font-size: 14px;">add</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="ldt" class="card-body" style="position: relative;">
+						<!-- Zone saisie nouveau contact -->
+						<div class="card-saisie collapse" id="nouvelleSaisie">
+							<md-progress-linear md-mode="query" class="md-warn" ng-if="enregistrement.saving"></md-progress-linear>
+							<div class="row">
+								<div class="col-xs-12">
+									<h4>
+										{{agent.PrenomNom}} - {{agent.EDSNom}}
+									</h4>
+								</div>
+							</div>
+							<form id="newDCC" name="newDCC">
+								<div class="row">
+									<div class="col-xs-3">
+										<button id="initagent" ng-class="{'btn btn-warning btn-block' : enregistrement.initiateur == 'agent', 'btn btn-default btn-block' : enregistrement.initiateur == 'client'}" ng-click="setSoliciteur('agent')">Contact initié Agent</button>
+									</div>
+									<div class="col-xs-3">
+										<button id="initclient" ng-class="{'btn btn-warning btn-block' : enregistrement.initiateur == 'client', 'btn btn-default btn-block' : enregistrement.initiateur == 'agent'}" ng-click="setSoliciteur('client')">Contact initié Client</button>
+									</div>
+									<div class="col-xs-1">
+										<span class="fakeBTN">via</span>
+									</div>
+									<div class="col-xs-5">
+										<div class="form-group form-inline">
+											<label for="canal">Canal :</label>
+											<!-- <select class="form-control" ng-options="item.canal as item.libelle for item in canauxCom track by item.id" ng-model="enregistrement.typ" required></select> -->
+											<select class="form-control" ng-model="enregistrement.typ" name="canal" id="canal" required>
+												<option ng-repeat="canal in canauxCom track by $index" value="{{canal.canal}}">{{canal.libelle}}</option>
+											</select>
+											<div class="alert alert-success" ng-messages="newDCC.enregistrement.typ.$error" ng-show="enregistrement.typ.$dirty" style="margin: 15px;">
+												<div ng-message="required">La sélection d'un canal est obligatoire. Veuillez le préciser.</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Objet -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group ">
+											<label for="objet">Objet :</label>
+											<br>
+											<input id="objet" name="objetDCC" type="text" ng-model="enregistrement.objet" style="width: 100%;" ng-minlenght="50" required>
+											<div class="alert alert-success" ng-messages="enregistrement.objet.$error" ng-show="enregistrement.objet.$dirty" style="margin: 15px;">
+												<div ng-message="required">L'objet est obligatoire pour finaliser votre saisie</div>
+												<div ng-message="minlenght">L'objet doit faire au minimum 50 charactères</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Infos pratiques -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="infosPratiques">Infos Utiles :</label> <br>
+											<textarea required name="info_utile" id="info_utile" ng-model="enregistrement.info_utile" rows="10" style="width: 100%;"></textarea>
+											<div class="alert alert-success" ng-messages="enregistrement.info_utile.$error" ng-show="enregistrement.info_utile.$dirty" style="margin: 15px;">
+												<div ng-message="required">Une saisie de l'information utile est obligatoire</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Conseils donnés pratiques -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="form-group">
+											<label for="conseilsDonnes">Conseils Donnés :</label> <br>
+											<textarea  name="conseil" id="conseil"  ng-model="enregistrement.conseil" style="width: 100%;"></textarea>
+											<!-- <div class="alert alert-success" ng-messages="enregistrement.conseil.$error" ng-show="enregistrement.conseil.$dirty" style="margin: 15px;">
+												<div ng-message="required">Une saisie des l'information utile est obligatoire</div>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<!-- Données confidentielles -->
+								<div class="row">
+									<div class="col-xs-12 bg-warning">
+										<div class="form-group">
+											<label for="donneesConfidentielles">Données Confidentielles:</label> <br>
+											<small>A ne pas divulguer au client.</small>
+											<textarea name="donneesConfidentielles" id="donneesConfidentielles" rows="2" ng-model="enregistrement.confidence" style="width: 100%;"></textarea>
+										</div>
+									</div>
+								</div>
+								<!-- CTA Enregistrer -->
+								<div class="row" style="padding-top:10px;">
+
+									<div class="col-xs-3">
+										<button ng-click="resetForm()" ng-hide="enregistrementOk" data-toggle="collapse" data-target="#nouvelleSaisie" class="btn btn-default btn-block">Annuler</button>
+										
+									</div>
+									<div class="col-xs-3">
+										<button class="btn btn-warning btn-block" ng-click="newDCC.$valid && saveEntry($event)">
+										Enregistrer
+										</button>
+									<div class="col-sm-3">
+										<button ng-click="resetForm()" ng-show="enregistrementOk" data-toggle="collapse" data-target="#nouvelleSaisie" class="btn btn-default btn-block">Fermer</button>
+									</div>
+									</div>
+								</div>
+								<hr>
+							</form>
+						</div>
+						<!-- <div  layout="column"> -->
+						<div  layout="column" ng-repeat="ev in lignesDT | orderBy:'-date_ligne' | filter:dcc.search | filter:{type_eds: dcc.filtreEds}">
+							<div layout="row">
+								<div class="leftNotif" layout="column" layout-align="center center">
+
+									<span class="agentPicture clicable {{ev.type_eds}}" data-toggle="collapse" data-target="#speedActions-{{$index}}">{{ev.Initiales}}</span>
+									<div id="speedActions-{{$index}}" class="collapse speedActionContainer" layout="column" layout-align="center center">
+										<a href="#"><i ng-click="callInterne('0'+ev.Telephone | TelFilter, $event)" class="material-icons speedAction text-success">phone</i></a>
+										<a href="#"><i ng-click="mail(ev.Mail, $event)" class="material-icons speedAction text-warning">mail</i></a>
+									</div>
+								</div>
+								<div layout="column" flex="80">
+									<span style="position: absolute; right:25px; color: grey; cursor:pointer;" ng-click="notify(ev)">
+										<i class="material-icons">call_missed_outgoing</i>
+									</span>
+									<span class="objet"><small style="color: #696969;">{{ (ev.date_ligne*1000) | date:'d/MM/yyyy' }}</small> | {{ev.lntcn || ev.objet}}</span>
+
+									<!-- cas si type rac -->
+									<span class="init" ng-if="ev.typ !== 'LIGNES' ">{{ev.nom_agent}} - {{ev.eds_agent}} a sollicité {{compte.nompart}} par <strong>{{ev.typ}}</strong></span>
+									<!-- cas si type ldt -->
+									<span class="init" ng-if="ev.typ == 'LIGNES' ">{{ev.nom_agent}} - {{ev.eds_agent}} a sollicité {{compte.nompart}} par <strong>{{ev.canal}}</strong></span>
+									<p class="excerpt" style="border-top: 1px solid #E7E7E7; border-left: 1px solid #E7E7E7; border-right: 1px solid #E7E7E7; padding: 15px; margin-top: 15px; border-radius: 15px 15px 0px 0px">
+										{{ev.infos_utiles}}
+									</p>
+									<p class="excerpt" style="font-size: 11px; border-left: 1px solid #E7E7E7; border-right: 1px solid #E7E7E7; padding:15px;">
+										<strong>Conseil(s) donné(s) :</strong> {{ev.conseil}}
+									</p>
+									<p class="excerpt" style="font-size: 11px; background-color: #E7E7E7; padding: 15px; border-radius: 0px 0px 15px 15px;">
+										<strong>Information(s) confidentielle(s) :</strong> {{ev.confidence}}
+									</p>
+								</div>
+							</div>
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+</div>

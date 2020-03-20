@@ -1,0 +1,103 @@
+[
+
+    [
+
+        {
+
+            "question": "Nom de jeune fille",
+
+            "reponse": "JACOB                           "
+
+        },
+
+        {
+
+            "question": "Date de naissance Monsieur",
+
+            "reponse": "27/06/1985"
+
+        },
+
+        {
+
+            "question": "Lieu de naissance Monsieur",
+
+            "reponse": "CHATELLERAULT                                     "
+
+        },
+
+        {
+
+            "question": "Date de naissance Mme/Melle",
+
+            "reponse": "12/06/1985"
+
+        },
+
+        {
+
+            "question": "Lieu de naissance Mme/Melle",
+
+            "reponse": "AMIENS                                            "
+
+        },
+
+        {
+
+            "question": "Nom du conseiller",
+
+            "reponse": "OSTRIC FLORIAN"
+
+        },
+
+        {
+
+            "question": "Agence commerciale (du conseiller)",
+
+            "reponse": "AUP ANGOULEME CHAMP DE MARS     "
+
+        },
+
+        {
+
+            "question": "Agence domiciliataire",
+
+            "reponse": "ANGOULEME CHAMP DE MARS         "
+
+        },
+
+        {
+
+            "question": "PRET Habitat en cours",
+
+            "reponse": "OUI"
+
+        },
+
+        {
+
+            "question": "PRET Consommation en cours",
+
+            "reponse": "NON"
+
+        },
+
+        {
+
+            "question": "Assurance Auto en cours",
+
+            "reponse": "OUI"
+
+        },
+
+        {
+
+            "question": "Assurance Multi-risque Habitation en cours",
+
+            "reponse": "NON"
+
+        }
+
+    ]
+
+]
